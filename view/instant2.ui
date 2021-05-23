@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>418</width>
+    <height>495</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLineEdit {
+
+border:2px solid rgb(221, 221, 221);
+	background-color: rgb(252, 252, 252);
+border-radius: bold 10px;
+	color: rgb(0, 0, 0);
+padding-left:45px;
+}
+
+QLineEdit:hover {
+border: 1px solid rgb(85, 85, 127);
+}
+
+QPushButton {
+ 
+	color: rgb(255, 255, 255);
+	
+	background-color: rgb(249, 168, 38);
+border: 0px solid;
+border-radius : 18px;
+font: bold 14px;
+}
+
+QPushButton:hover {
+	
+	background-color: rgb(151, 9, 206);
+	
+	color: rgb(255, 255, 255);
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_6">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QCalendarWidget" name="calendarWidget">
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(247, 247, 247);
+color: black;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,9,0,0,0">
+     <property name="spacing">
+      <number>6</number>
+     </property>
+     <property name="leftMargin">
+      <number>17</number>
+     </property>
+     <property name="rightMargin">
+      <number>17</number>
+     </property>
+     <property name="bottomMargin">
+      <number>28</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="font">
+        <font>
+         <family>Nirmala UI</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0,0,0,0%);
+color: rgb(56, 0, 84);</string>
+       </property>
+       <property name="text">
+        <string>Purpose</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox">
+       <property name="styleSheet">
+        <string notr="true">QComboBox {
+border:2px solid rgb(221, 221, 221);
+	background-color: rgb(252, 252, 252);
+border-radius: bold 8px;
+padding-left:40px;
+color:black;
+
+}
+</string>
+       </property>
+       <property name="editable">
+        <bool>true</bool>
+       </property>
+       <item>
+        <property name="text">
+         <string>Grade Consultation</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Grade</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Clearance</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Borrow keys</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Other matter</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="font">
+        <font>
+         <family>Nirmala UI</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0,0,0,0%);
+color: rgb(56, 0, 84);</string>
+       </property>
+       <property name="text">
+        <string>Confirm Time</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTimeEdit" name="timeEdit">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QTimeEdit {
+ 
+color:black;
+	background-color: rgb(240, 240, 240);
+
+font: bold 10px;
+padding-left: 45px;
+border:2px solid rgb(221, 221, 221);
+border-radius: bold 8px;
+}
+
+QTimeEdit:hover {
+	
+	background-color: rgb(151, 9, 206);
+	
+	color: rgb(255, 255, 255);
+}</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="prioritynum_buttn">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777207</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+ 
+	color: rgb(255, 255, 255);
+	
+	background-color: rgb(249, 168, 38);
+border: 0px solid;
+border-radius : 18px;
+font: bold 14px;
+}
+
+QPushButton:hover {
+	
+	background-color: rgb(151, 9, 206);
+	
+	color: rgb(255, 255, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>Get priority number</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

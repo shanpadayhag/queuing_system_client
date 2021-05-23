@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#00D000;stroke-width:15;stroke-miterlimit:10;}
+	.st1{fill:#00D000;}
+	.st2{fill:none;}
+	.st3{fill:#FFFFFF;}
+	.st4{font-family:'ArialMT';}
+	.st5{font-size:250px;}
+</style>
+<g id="Layer_1">
+	<g id="Layer_2_background">
+		<g>
+			<circle class="st0" cx="256.0887" cy="255.7101" r="239.3491"/>
+		</g>
+	</g>
+	<circle class="st1" cx="256" cy="255.7101" r="222.1893"/>
+</g>
+<g id="Layer_2">
+	<rect x="49.0213" y="174.9574" class="st2" width="407.2979" height="184.5957"/>
+	<text transform="matrix(1 0 0 1 58.2122 353.9545)" class="st3 st4 st5">GO</text>
+</g>
+</svg>
