@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>594</height>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -135,6 +135,9 @@ QPushButton:hover {
      <bold>true</bold>
     </font>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true"/>
    </property>
@@ -233,6 +236,9 @@ background-color: rgba(0,0,0,0%);</string>
      <bold>true</bold>
     </font>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true"/>
    </property>
@@ -302,6 +308,9 @@ background-color: rgba(0,0,0,0%);</string>
      <italic>false</italic>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true"/>
