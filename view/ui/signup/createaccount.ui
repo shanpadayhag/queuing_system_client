@@ -91,7 +91,7 @@ background-color: rgba(0,0,0,0%);</string>
     <string>If you havent create your account</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="email_edit">
+  <widget class="QLineEdit" name="last_name">
    <property name="geometry">
     <rect>
      <x>280</x>
@@ -142,7 +142,7 @@ background-color: rgba(0,0,0,0%);</string>
     <string>Create an account to join!</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="username_edit">
+  <widget class="QLineEdit" name="first_name">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -556,24 +556,14 @@ background-color: rgba(0,0,0,0%);</string>
     <string notr="true">color:black;</string>
    </property>
    <property name="currentText">
-    <string>Information Technology</string>
+    <string>Select your course</string>
    </property>
    <property name="placeholderText">
     <string/>
    </property>
    <item>
     <property name="text">
-     <string>Information Technology</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Computer Science</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Information System</string>
+     <string>Select your course</string>
     </property>
    </item>
   </widget>
@@ -594,22 +584,7 @@ background-color: rgba(0,0,0,0%);</string>
    </property>
    <item>
     <property name="text">
-     <string>1st year</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>2nd year</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>3rd year</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>4th year</string>
+     <string>Select your year level</string>
     </property>
    </item>
   </widget>
@@ -722,8 +697,8 @@ background-color: rgba(0,0,0,0%);</string>
   <zorder>Queue</zorder>
   <zorder>label_12</zorder>
   <zorder>label_2</zorder>
-  <zorder>email_edit</zorder>
-  <zorder>username_edit</zorder>
+  <zorder>last_name</zorder>
+  <zorder>first_name</zorder>
   <zorder>label_13</zorder>
   <zorder>label_14</zorder>
   <zorder>label_15</zorder>
