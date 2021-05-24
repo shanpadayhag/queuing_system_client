@@ -75,12 +75,6 @@ def addData():
         INSERT INTO `course` (`name`) VALUES ('Entertainment and Multimedia Computing');
         INSERT INTO `course` (`name`) VALUES ('Information System');
         INSERT INTO `course` (`name`) VALUES ('Information Technology');
-
-        INSERT INTO `cc15`.`year_level` (`year`) VALUES ('First');
-        INSERT INTO `cc15`.`year_level` (`year`) VALUES ('Second');
-        INSERT INTO `cc15`.`year_level` (`year`) VALUES ('Third');
-        INSERT INTO `cc15`.`year_level` (`year`) VALUES ('Fourth');
-        INSERT INTO `cc15`.`year_level` (`year`) VALUES ('Fifth');
         
         INSERT INTO `year_level` (`year`) VALUES ('First Year');
         INSERT INTO `year_level` (`year`) VALUES ('Second Year');

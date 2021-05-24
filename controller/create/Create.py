@@ -5,7 +5,7 @@ from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.uic import loadUi
 
 from model.Database import Database
-from model.UserType import convertType
+from model.AccountType import AccountType
 
 class Create(QDialog):
     def __init__(self, widget):
@@ -50,26 +50,29 @@ class Create(QDialog):
             self.year_level.addItem(item[1], item[0])
     
     def signup(self):
-        self.sqlData.append(self.first_name.text()) # First name
-        self.sqlData.append(self.last_name.text()) # Last name
-        self.sqlData.append(self.username_edit_2.text()) # School ID
-        self.sqlData.append(self.password_edit.text()) # Password
-        self.sqlData.append(self.course_box.itemData(self.course_box.currentIndex())) # Course
-        self.sqlData.append(self.year_level.itemData(self.year_level.currentIndex())) # Year Level
-        self.sqlData.append(convertType('student'))
-        self.sqlStatement = "INSERT INTO `user` (`first_name`, `last_name`, `school_id`, `password`, `course`, `year`, `type`) VALUES (%s, %s, %s, %s, %s, %s, %s);"
+        errorString = self.checkFields()
+        if errorString:
+            print(errorString)
+        else:
+            self.sqlStatement = """
+                INSERT INTO `user` (
+                    `first_name`, `last_name`, 
+                    `school_id`, `password`, 
+                    `course`, `year`, `type`
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s);
+            """
 
-        try:
-            database = Database()
-            database.insert(self.sqlStatement, tuple(self.sqlData))
-            del database
+            try:
+                database = Database()
+                database.insert(self.sqlStatement, tuple(self.sqlData))
+                del database
 
-            self.openLogin()
-        except Exception as e:
-            print(e)
-            print('School ID already exists')
-        finally:
-            self.sqlData.clear()
+                self.openLogin()
+            except Exception as e:
+                print(e)
+                print('School ID already exists')
+            finally:
+                self.sqlData.clear()
     
     def clearFields(self):
         self.first_name.setText('')
@@ -83,4 +86,41 @@ class Create(QDialog):
         self.clearFields()
         self.widget.setCurrentIndex(0)
         self.widget.resize(1000, 600)
+    
+    def checkFields(self):
+        self.sqlData.clear()
+        errorString = ''
+        if self.first_name.text() != '':
+            self.sqlData.append(self.first_name.text()) # First name
+        else:
+            errorString += "- First name can't be blank\n"
+        
+        if self.last_name.text() != '':
+            self.sqlData.append(self.last_name.text()) # Last name
+        else:
+            errorString += "- Last name can't be blank\n"
+        
+        if self.username_edit_2.text() != '':
+            self.sqlData.append(self.username_edit_2.text()) # School ID
+        else:
+            errorString += "- School ID can't be blank\n"
+        
+        if self.password_edit.text() != '':
+            self.sqlData.append(self.password_edit.text()) # Password
+        else:
+            errorString += "- School ID can't be blank\n"
+        
+        if self.course_box.itemData(self.course_box.currentIndex()) != None:
+            self.sqlData.append(self.course_box.itemData(self.course_box.currentIndex())) # Course
+        else:
+            errorString += "- Please choose your course\n"
+
+        if self.year_level.itemData(self.year_level.currentIndex()) != None:
+            self.sqlData.append(self.year_level.itemData(self.year_level.currentIndex())) # Year Level
+        else:
+            errorString += "- Please choose an your year level\n"
+
+        self.sqlData.append(AccountType().STUDENT)
+
+        return errorString
         
