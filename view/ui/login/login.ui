@@ -112,7 +112,7 @@ QPushButton:hover {
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>photos/lock.svg</pixmap>
+    <pixmap>../../img/login/password_icon.svg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -280,7 +280,7 @@ background-color: rgba(0,0,0,0%);</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>photos/Untitled design (1).svg</pixmap>
+    <pixmap>../../img/login/greetings_design.svg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -326,7 +326,7 @@ background-color: rgba(0,0,0,0%);</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>photos/people.svg</pixmap>
+    <pixmap>../../img/people.svg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -367,7 +367,7 @@ background-color: rgb(94, 34, 127);
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>photos/21448395241556281664.svg</pixmap>
+    <pixmap>../../img/login/username_icon.svg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>

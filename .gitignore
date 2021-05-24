@@ -1,0 +1,5 @@
+.qt_for_python
+
+# Python Caches
+controller/__pycache__
+controller/login/__pycache__
