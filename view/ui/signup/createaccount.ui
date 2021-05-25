@@ -22,7 +22,7 @@
   <property name="styleSheet">
    <string notr="true">QLabel {
 	background-color: rgb(147, 50, 158);
-	color: rgb(114, 1, 160);
+	color: white;
 }
 
 QDialog {
@@ -43,10 +43,11 @@ QLineEdit:hover {
 
 QPushButton {
 	color: rgb(255, 255, 255);
-	background-color: rgb(249, 168, 38);
+	
+	background-color: rgb(205, 162, 227);
 	border: 0px solid;
-	border-radius : 18px;
-	font: bold 14px;
+	border-radius : 16px;
+	font: bold 18px;
 }
 
 QPushButton:hover {	
@@ -65,8 +66,6 @@ QComboBox {
 #login {
 	color: rgb(249, 168, 38);
 	background-color: rgba(0,0,0,0);
-	font-size: 11px;
-	font-weight: 100;
 }
 
 #login:hover {
@@ -102,7 +101,10 @@ background-color: rgba(0,0,0,0%);</string>
    </property>
    <property name="font">
     <font>
-     <pointsize>9</pointsize>
+     <family>Nirmala UI</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -115,7 +117,7 @@ background-color: rgba(0,0,0,0%);</string>
     <enum>QLineEdit::Normal</enum>
    </property>
    <property name="placeholderText">
-    <string>Enter your email</string>
+    <string>Last name</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_12">
@@ -153,7 +155,10 @@ background-color: rgba(0,0,0,0%);</string>
    </property>
    <property name="font">
     <font>
-     <pointsize>9</pointsize>
+     <family>Nirmala UI</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -169,7 +174,7 @@ background-color: rgba(0,0,0,0%);</string>
     <enum>QLineEdit::Normal</enum>
    </property>
    <property name="placeholderText">
-    <string>Username</string>
+    <string>First name</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="password_edit">
@@ -183,7 +188,10 @@ background-color: rgba(0,0,0,0%);</string>
    </property>
    <property name="font">
     <font>
+     <family>Nirmala UI</family>
      <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -222,7 +230,7 @@ background-color: rgba(0,0,0,0%);</string>
     <string notr="true">background-color: rgba(0,0,0,0%);</string>
    </property>
    <property name="text">
-    <string>School Email</string>
+    <string>Last name</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_14">
@@ -245,7 +253,7 @@ background-color: rgba(0,0,0,0%);</string>
     <string notr="true">background-color: rgba(0,0,0,0%);</string>
    </property>
    <property name="text">
-    <string>Username</string>
+    <string>First name</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_15">
@@ -356,11 +364,19 @@ background-color: rgba(0,0,0,0%);</string>
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>140</x>
      <y>500</y>
-     <width>131</width>
+     <width>181</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Nirmala UI</family>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgba(0,0,0,0);</string>
@@ -372,10 +388,10 @@ background-color: rgba(0,0,0,0%);</string>
   <widget class="QLabel" name="Queue">
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>0</x>
      <y>0</y>
-     <width>451</width>
-     <height>601</height>
+     <width>1000</width>
+     <height>600</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -383,6 +399,9 @@ background-color: rgba(0,0,0,0%);</string>
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../../img/signup/l.qrc">:/newPrefix/Untitled design (1).svg</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="label_9">
@@ -400,28 +419,6 @@ background-color: rgba(0,0,0,0%);</string>
    </property>
    <property name="text">
     <string>fill up the form to access</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_10">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>180</y>
-     <width>21</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgba(0,0,0,0%);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap>../../img/signup/email_icon.svg</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_11">
@@ -502,7 +499,10 @@ background-color: rgba(0,0,0,0%);</string>
    </property>
    <property name="font">
     <font>
+     <family>Nirmala UI</family>
      <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -518,7 +518,7 @@ background-color: rgba(0,0,0,0%);</string>
     <enum>QLineEdit::Normal</enum>
    </property>
    <property name="placeholderText">
-    <string>Enter your ID</string>
+    <string>Enter your school ID</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_19">
@@ -552,6 +552,14 @@ background-color: rgba(0,0,0,0%);</string>
      <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Nirmala UI</family>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">color:black;</string>
    </property>
@@ -575,6 +583,14 @@ background-color: rgba(0,0,0,0%);</string>
      <width>211</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Nirmala UI</family>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="insertPolicy">
     <enum>QComboBox::InsertAtBottom</enum>
@@ -687,6 +703,15 @@ background-color: rgba(0,0,0,0%);</string>
      <height>31</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Nirmala UI</family>
+     <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
@@ -708,7 +733,6 @@ background-color: rgba(0,0,0,0%);</string>
   <zorder>label_4</zorder>
   <zorder>label_5</zorder>
   <zorder>label_9</zorder>
-  <zorder>label_10</zorder>
   <zorder>label_11</zorder>
   <zorder>label_18</zorder>
   <zorder>course_box</zorder>
@@ -723,6 +747,8 @@ background-color: rgba(0,0,0,0%);</string>
   <zorder>label_19</zorder>
   <zorder>login</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../img/signup/l.qrc"/>
+ </resources>
  <connections/>
 </ui>

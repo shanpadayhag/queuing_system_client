@@ -7,8 +7,26 @@
     <x>0</x>
     <y>0</y>
     <width>574</width>
-    <height>598</height>
+    <height>600</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>574</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>574</width>
+    <height>600</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -64,7 +82,7 @@ QPushButton:hover {
    <property name="styleSheet">
     <string notr="true">QLabel {
 
-	background-color: rgb(147, 50, 158);
+	background-color: rgb(165, 143, 170);
 }</string>
    </property>
    <property name="text">
@@ -74,9 +92,9 @@ QPushButton:hover {
   <widget class="QLabel" name="label_16">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>150</y>
-     <width>261</width>
+     <x>220</x>
+     <y>140</y>
+     <width>141</width>
      <height>61</height>
     </rect>
    </property>
@@ -94,7 +112,7 @@ background-color: rgba(0,0,0,0%);
 </string>
    </property>
    <property name="text">
-    <string> Patrick Marlowe Cabico Oliva</string>
+    <string>Patrick J. Mack</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_17">
@@ -123,7 +141,7 @@ background-color: rgba(0,0,0,0%);
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>photos/7.svg</pixmap>
+    <pixmap>../img/studentdashboard/icons/mack.svg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -192,13 +210,13 @@ background-color: rgba(0,0,0,0%);
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>photos/onlinecircle.svg</pixmap>
+    <pixmap>../img/studentdashboard/icons/away.svg</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>270</x>
      <y>220</y>
      <width>71</width>
      <height>31</height>
@@ -217,7 +235,7 @@ background-color: rgba(0,0,0,0%);
 background-color: rgba(0,0,0,0%);</string>
    </property>
    <property name="text">
-    <string>ONLINE</string>
+    <string>Away</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_13">

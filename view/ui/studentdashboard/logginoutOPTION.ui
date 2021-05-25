@@ -147,7 +147,7 @@ color:white;
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>photos/log.svg</pixmap>
+    <pixmap>../img/studentdashboard/log.svg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>

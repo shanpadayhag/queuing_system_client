@@ -315,7 +315,7 @@ color: rgb(56, 0, 84);</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>photos/sch.svg</pixmap>
+    <pixmap>../../img/booking&amp;instantappointment/sch.svg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>

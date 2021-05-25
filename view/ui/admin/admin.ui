@@ -340,7 +340,7 @@ border: 0px solid;
 }</string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="home">
     <property name="styleSheet">
@@ -359,7 +359,7 @@ border: 0px solid;
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>photos/ADMIN.svg</pixmap>
+      <pixmap>../../img/admin/ADMIN.svg</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -636,7 +636,7 @@ border: 0px solid;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>photos/refresh2.svg</normaloff>photos/refresh2.svg</iconset>
+        <normaloff>../../img/admin/refresh2.svg</normaloff>../../img/admin/refresh2.svg</iconset>
       </property>
      </widget>
     </widget>
@@ -745,7 +745,7 @@ border: 0px solid;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>photos/refresh2.svg</normaloff>photos/refresh2.svg</iconset>
+        <normaloff>../../img/admin/refresh2.svg</normaloff>../../img/admin/refresh2.svg</iconset>
       </property>
      </widget>
     </widget>
@@ -846,7 +846,7 @@ QPushButton:hover {
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>photos/refresh2.svg</normaloff>photos/refresh2.svg</iconset>
+        <normaloff>../../img/admin/refresh2.svg</normaloff>../../img/admin/refresh2.svg</iconset>
       </property>
      </widget>
     </widget>
@@ -1059,7 +1059,7 @@ QPushButton:hover {
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>photos/CLOSE.svg</normaloff>photos/CLOSE.svg</iconset>
+     <normaloff>../../img/admin/refresh2.svg</normaloff>../../img/admin/refresh2.svg</iconset>
    </property>
    <property name="autoDefault">
     <bool>true</bool>

@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="sd">
+    <file>bg.svg</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>icons/notif.svg</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>icons/message.svg</file>
+  </qresource>
+</RCC>

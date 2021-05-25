@@ -6,15 +6,33 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>934</width>
-    <height>605</height>
+    <width>750</width>
+    <height>600</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>750</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>750</width>
+    <height>600</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(211, 193, 231);</string>
+   <string notr="true">background-color: white;</string>
   </property>
   <widget class="QGroupBox" name="buttons_sidegroup">
    <property name="geometry">
@@ -51,7 +69,7 @@ QPushButton:hover {
    <property name="title">
     <string/>
    </property>
-   <widget class="QPushButton" name="upcoming_buttn">
+   <widget class="QPushButton" name="edit_buttn">
     <property name="geometry">
      <rect>
       <x>-10</x>
@@ -75,43 +93,7 @@ QPushButton:hover {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>photos/16671574911586787867.svg</normaloff>photos/16671574911586787867.svg</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>28</width>
-      <height>50</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="settings_buttn">
-    <property name="geometry">
-     <rect>
-      <x>-10</x>
-      <y>260</y>
-      <width>231</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <italic>false</italic>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string>Settings</string>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>photos/16945449851552644365.svg</normaloff>photos/16945449851552644365.svg</iconset>
+      <normaloff>../../img/faculty/availability.svg</normaloff>../../img/faculty/availability.svg</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -124,7 +106,7 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>560</y>
+      <y>550</y>
       <width>221</width>
       <height>51</height>
      </rect>
@@ -140,11 +122,11 @@ QPushButton:hover {
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>   Logout</string>
+     <string>Back to Dashboard</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>photos/logout.svg</normaloff>photos/logout.svg</iconset>
+      <normaloff>../../img/faculty/logout.svg</normaloff>../../img/faculty/logout.svg</iconset>
     </property>
    </widget>
    <widget class="QPushButton" name="notification_buttn">
@@ -169,10 +151,6 @@ QPushButton:hover {
     <property name="text">
      <string>Notification</string>
     </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>photos/13252117381571183079.svg</normaloff>photos/13252117381571183079.svg</iconset>
-    </property>
     <property name="iconSize">
      <size>
       <width>30</width>
@@ -183,9 +161,9 @@ QPushButton:hover {
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>60</x>
       <y>40</y>
-      <width>121</width>
+      <width>91</width>
       <height>21</height>
      </rect>
     </property>
@@ -194,7 +172,7 @@ QPushButton:hover {
 font: 18px;</string>
     </property>
     <property name="text">
-     <string>Student's Info</string>
+     <string>User Profile</string>
     </property>
    </widget>
    <widget class="QPushButton" name="settings_buttn_2">
@@ -237,10 +215,10 @@ font: 18px;</string>
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>150</x>
      <y>0</y>
-     <width>711</width>
-     <height>581</height>
+     <width>601</width>
+     <height>591</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -272,10 +250,149 @@ padding-right: 20px;
 QLineEdit:hover {
 border: 2px solid white;
 }
+
+
+#tableWidget {
+	background-color: rgba(88, 105, 126, 50);
+	margin-bottom: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	border-radius: 10px;
+	gridline-color: rgba(47, 56, 67, 150);
+	font-size: 15px;
+}
+
+#tableWidget::item {
+	background-color: rgba(17, 29, 43, 150);
+	color: rgb(255, 255, 255);
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#tableWidget::item:selected{
+	background-color: rgba(119, 143, 171, 100);
+}
+
+#tableWidget QHeaderView::section{
+	background-color: rgba(88, 105, 126, 150);
+	border-style: none;
+    border-bottom: 1px solid rgba(61, 73, 88, 150);
+   	border-right: 1px solid rgba(61, 73, 88, 150);
+	color: rgb(255, 255, 255);
+	font-size: 15px;
+	font-weight: 600;
+	border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+#tableWidget QHeaderView {
+	background-color: transparent;
+}
+
+#pushButton {
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	color: #fff;
+	font-size: 15px;
+	margin: 10px 10px;
+	padding-bottom: 1px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+#pushButton:hover {
+	border-bottom: 1px solid #fff;
+}
+
+
+ QScrollBar:vertical {
+	border: none;
+    background: rgb(52, 59, 72);
+    width: 10px;
+    margin: 15px 0;
+ }
+
+QScrollBar:horizontal {
+    border: none;
+    background: rgb(52, 59, 72);
+    height: 10px;
+    margin: 0px 15px;
+}
+
+ QScrollBar::handle:vertical {	
+	background: rgb(140, 160, 180);
+    min-height: 25px;
+	border-radius: 4px
+ }
+
+QScrollBar::handle:horizontal {
+    background: rgb(140, 160, 180);
+    min-width: 25px;
+	border-radius: 4px
+}
+
+ QScrollBar::add-line:vertical {
+	border: none;
+	background: rgb(55, 63, 77);
+	height: 20px;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	subcontrol-position: bottom;
+	subcontrol-origin: margin;
+ }
+
+ QScrollBar::sub-line:vertical {
+	border: none;
+	background: rgb(55, 63, 77);
+	height: 20px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	subcontrol-position: top;
+	subcontrol-origin: margin;
+ }
+
+QScrollBar::add-line:horizontal {
+    border: none;
+    background: rgb(55, 63, 77);
+    width: 20px;
+	border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:horizontal {
+    border: none;
+    background: rgb(55, 63, 77);
+    width: 20px;
+	border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:vertical
+{
+     background: none;
+}
+
+ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+     background: none;
+ }
+
+QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:horizontal
+{
+     background: none;
+}
+
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
+{
+     background: none;
+}
 </string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="UserInfo">
     <widget class="QLineEdit" name="name_edit">
@@ -587,14 +704,57 @@ background-color: rgba(0,0,0,0%);</string>
       <string>Save Changes</string>
      </property>
     </widget>
+    <widget class="QLabel" name="label_21">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>30</y>
+       <width>91</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Nirmala UI</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(94, 34, 127);
+background-color: rgba(0,0,0,0%);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../../img/faculty/1111.svg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
     <widget class="QLabel" name="name_user">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>50</y>
-       <width>171</width>
+       <x>270</x>
+       <y>70</y>
+       <width>170</width>
        <height>41</height>
       </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>170</width>
+       <height>41</height>
+      </size>
      </property>
      <property name="font">
       <font>
@@ -609,7 +769,32 @@ background-color: rgba(0,0,0,0%);</string>
 background-color: rgba(0,0,0,0%);</string>
      </property>
      <property name="text">
-      <string>Edit Profile</string>
+      <string>Admin Faculty</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="location_user">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>100</y>
+       <width>131</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Nirmala UI</family>
+       <pointsize>8</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(94, 34, 127);
+background-color: rgba(0,0,0,0%);</string>
+     </property>
+     <property name="text">
+      <string>Carmen, CDOC</string>
      </property>
     </widget>
     <widget class="QTextEdit" name="textEdit_location">
@@ -622,6 +807,7 @@ background-color: rgba(0,0,0,0%);</string>
       </rect>
      </property>
     </widget>
+    <zorder>label_21</zorder>
     <zorder>name_edit</zorder>
     <zorder>userID_edit</zorder>
     <zorder>email_edit</zorder>
@@ -635,84 +821,11 @@ background-color: rgba(0,0,0,0%);</string>
     <zorder>username_edit</zorder>
     <zorder>savechanges_buttn</zorder>
     <zorder>name_user</zorder>
+    <zorder>location_user</zorder>
     <zorder>label_6</zorder>
     <zorder>textEdit_location</zorder>
    </widget>
    <widget class="QWidget" name="Notification">
-    <widget class="QGroupBox" name="groupBox">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>130</y>
-       <width>621</width>
-       <height>361</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgba(0,0,0,0%)</string>
-     </property>
-     <property name="title">
-      <string/>
-     </property>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>240</y>
-        <width>221</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Nirmala UI</family>
-        <pointsize>12</pointsize>
-        <weight>75</weight>
-        <italic>false</italic>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgba(0,0,0,0%);
-</string>
-      </property>
-      <property name="text">
-       <string>No Notifcation display</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_5">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>70</y>
-        <width>201</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Nirmala UI</family>
-        <pointsize>-1</pointsize>
-        <weight>50</weight>
-        <italic>false</italic>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgba(0,0,0,0%);
-font: 18px;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>photos/10780069171545197271.svg</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </widget>
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
@@ -736,9 +849,9 @@ font: 18px;</string>
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>50</y>
-       <width>131</width>
+       <x>230</x>
+       <y>70</y>
+       <width>211</width>
        <height>21</height>
       </rect>
      </property>
@@ -756,17 +869,231 @@ font: 18px;</string>
 </string>
      </property>
      <property name="text">
-      <string>NOTIFICATION</string>
+      <string>NOTIFICATION DISPLAY</string>
      </property>
+    </widget>
+    <widget class="QPushButton" name="Update">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>520</y>
+       <width>221</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Segoe UI</family>
+       <pointsize>-1</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Update</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="tableWidget">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>120</y>
+       <width>461</width>
+       <height>411</height>
+      </rect>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="tabKeyNavigation">
+      <bool>false</bool>
+     </property>
+     <property name="showDropIndicator" stdset="0">
+      <bool>false</bool>
+     </property>
+     <property name="dragDropOverwriteMode">
+      <bool>false</bool>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>false</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+     <property name="cornerButtonEnabled">
+      <bool>false</bool>
+     </property>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>New Row</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>Notifications</string>
+      </property>
+     </column>
+     <item row="0" column="0">
+      <property name="text">
+       <string>Recipient</string>
+      </property>
+     </item>
     </widget>
    </widget>
    <widget class="QWidget" name="Messages">
     <widget class="QGroupBox" name="groupBox_2">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>140</y>
-       <width>621</width>
+       <x>100</x>
+       <y>120</y>
+       <width>481</width>
        <height>361</height>
       </rect>
      </property>
@@ -779,7 +1106,7 @@ font: 18px;</string>
      <widget class="QLabel" name="label_22">
       <property name="geometry">
        <rect>
-        <x>200</x>
+        <x>140</x>
         <y>260</y>
         <width>221</width>
         <height>41</height>
@@ -805,8 +1132,8 @@ font: 18px;</string>
      <widget class="QLabel" name="label_23">
       <property name="geometry">
        <rect>
-        <x>210</x>
-        <y>70</y>
+        <x>130</x>
+        <y>60</y>
         <width>201</width>
         <height>181</height>
        </rect>
@@ -828,7 +1155,7 @@ font: 18px;</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>photos/1915618441595156106.svg</pixmap>
+       <pixmap>../../img/studentdashboard/icons/message.svg</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -891,6 +1218,8 @@ font: 18px;</string>
     </widget>
    </widget>
   </widget>
+  <zorder>stackedWidget</zorder>
+  <zorder>buttons_sidegroup</zorder>
  </widget>
  <resources/>
  <connections/>

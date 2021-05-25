@@ -64,7 +64,7 @@ QPushButton:hover {
    <property name="styleSheet">
     <string notr="true">QLabel {
 
-	background-color: rgb(165, 143, 170);
+	background-color: rgb(147, 50, 158);
 }</string>
    </property>
    <property name="text">
@@ -74,9 +74,9 @@ QPushButton:hover {
   <widget class="QLabel" name="label_16">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>140</y>
-     <width>141</width>
+     <x>160</x>
+     <y>150</y>
+     <width>261</width>
      <height>61</height>
     </rect>
    </property>
@@ -94,7 +94,7 @@ background-color: rgba(0,0,0,0%);
 </string>
    </property>
    <property name="text">
-    <string>Patrick J. Mack</string>
+    <string> Patrick Marlowe Cabico Oliva</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_17">
@@ -123,7 +123,7 @@ background-color: rgba(0,0,0,0%);
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>photos/mack.svg</pixmap>
+    <pixmap>../img/studentdashboard/icons/7.svg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -192,13 +192,13 @@ background-color: rgba(0,0,0,0%);
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>photos/away.svg</pixmap>
+    <pixmap>../img/studentdashboard/icons/onlinecircle.svg</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>260</x>
      <y>220</y>
      <width>71</width>
      <height>31</height>
@@ -217,7 +217,7 @@ background-color: rgba(0,0,0,0%);
 background-color: rgba(0,0,0,0%);</string>
    </property>
    <property name="text">
-    <string>Away</string>
+    <string>ONLINE</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_13">
