@@ -5,3 +5,5 @@ controller/__pycache__
 controller/login/__pycache__
 controller/create/__pycache__
 model/__pycache__
+view/qrc/login/__pycache__
+view/qrc/signup/__pycache__

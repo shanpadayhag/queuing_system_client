@@ -42,15 +42,21 @@ def createTables():
             `last_name` varchar(255) NOT NULL,
             `school_id` varchar(255) NOT NULL,
             `password` varchar(255) NOT NULL,
-            `course` int NOT NULL,
-            `year` int NOT NULL,
             `type` tinyint(1) NOT NULL,
             PRIMARY KEY (`id`),
-            KEY `user_course_idx` (`course`),
-            KEY `user_year_level_idx` (`year`),
-            KEY `type` (`type`),
-            CONSTRAINT `user_course` FOREIGN KEY (`course`) REFERENCES `course` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-            CONSTRAINT `user_year_level` FOREIGN KEY (`year`) REFERENCES `year_level` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+            KEY `type` (`type`)
+        );
+
+        CREATE TABLE `user_student` (
+            `id` int NOT NULL,
+            `course` int NOT NULL,
+            `year` int NOT NULL,
+            PRIMARY KEY (`id`,`course`,`year`),
+            KEY `student_course_idx` (`course`),
+            KEY `student_year_idx` (`year`),
+            CONSTRAINT `student_course` FOREIGN KEY (`course`) REFERENCES `course` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+            CONSTRAINT `student_user` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+            CONSTRAINT `student_year` FOREIGN KEY (`year`) REFERENCES `year_level` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
         );
     """
     for statement in sqlStatement.split(';'):
@@ -71,11 +77,13 @@ def addData():
     csr = conn.cursor()
 
     sqlStatement = """
+        INSERT INTO `course` (`name`) VALUES ('');
         INSERT INTO `course` (`name`) VALUES ('Computer Science');
         INSERT INTO `course` (`name`) VALUES ('Entertainment and Multimedia Computing');
         INSERT INTO `course` (`name`) VALUES ('Information System');
         INSERT INTO `course` (`name`) VALUES ('Information Technology');
         
+        INSERT INTO `year_level` (`year`) VALUES ('');
         INSERT INTO `year_level` (`year`) VALUES ('First Year');
         INSERT INTO `year_level` (`year`) VALUES ('Second Year');
         INSERT INTO `year_level` (`year`) VALUES ('Third Year');

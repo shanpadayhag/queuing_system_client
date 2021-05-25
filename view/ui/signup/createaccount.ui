@@ -43,7 +43,6 @@ QLineEdit:hover {
 
 QPushButton {
 	color: rgb(255, 255, 255);
-	
 	background-color: rgb(205, 162, 227);
 	border: 0px solid;
 	border-radius : 16px;
@@ -55,23 +54,39 @@ QPushButton:hover {
 	color: rgb(255, 255, 255);
 }
 
-QComboBox {
-	border:2px solid rgb(221, 221, 221);
-	background-color: rgb(252, 252, 252);
-	border-radius: bold 10px;
-	padding-left:40px;
-	color:black;
-}
-
 #login {
 	color: rgb(249, 168, 38);
 	background-color: rgba(0,0,0,0);
 }
 
 #login:hover {
-	color: rgb(151, 9, 206);
+	color: rgb(252, 252, 252);
 }
-</string>
+
+QComboBox{
+	background-color: rgb(252, 252, 252);
+	color:black;
+	border-radius: bold 10px;
+	border:2px solid rgb(221, 221, 221);
+	padding: 5px;
+	padding-left:40px;
+}
+
+QComboBox:hover{
+	border: 1px solid rgb(85, 85, 127);
+}
+
+QComboBox::drop-down {
+	subcontrol-origin: padding;
+	subcontrol-position: top right;
+	width: 25px; 
+	border: none;
+ }
+
+QComboBox QAbstractItemView {
+	padding: 10px;
+	background-color: rgb(252, 252, 252);
+}</string>
   </property>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
@@ -401,7 +416,7 @@ background-color: rgba(0,0,0,0%);</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../../img/signup/l.qrc">:/newPrefix/Untitled design (1).svg</pixmap>
+    <pixmap resource="../../qrc/signup/background_design.qrc">:/newPrefix/background_design.svg</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="label_9">
@@ -561,7 +576,7 @@ background-color: rgba(0,0,0,0%);</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color:black;</string>
+    <string notr="true"/>
    </property>
    <property name="currentText">
     <string>Select your course</string>
@@ -591,6 +606,9 @@ background-color: rgba(0,0,0,0%);</string>
      <weight>75</weight>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
    </property>
    <property name="insertPolicy">
     <enum>QComboBox::InsertAtBottom</enum>
@@ -666,7 +684,7 @@ background-color: rgba(0,0,0,0%);</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../../img/signup/background_design.svg</pixmap>
+    <pixmap>../../img/signup/main_design.svg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -748,7 +766,7 @@ background-color: rgba(0,0,0,0%);</string>
   <zorder>login</zorder>
  </widget>
  <resources>
-  <include location="../../img/signup/l.qrc"/>
+  <include location="../../qrc/signup/background_design.qrc"/>
  </resources>
  <connections/>
 </ui>

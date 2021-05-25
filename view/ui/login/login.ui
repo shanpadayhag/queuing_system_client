@@ -35,7 +35,7 @@ QLineEdit {
 border:2px solid rgb(209, 209, 209);
 background-color: rgb(255, 255, 255);
 border-radius: bold 15px;
-color: rgb(189, 189, 189);
+color: rgb(0, 0, 0);
 padding-left: 65px;
 }
 
@@ -78,7 +78,7 @@ QPushButton:hover {
     <string notr="true"/>
    </property>
    <property name="text">
-    <string>Enter your school ID</string>
+    <string/>
    </property>
    <property name="echoMode">
     <enum>QLineEdit::Normal</enum>
@@ -106,10 +106,10 @@ QPushButton:hover {
     <string notr="true"/>
    </property>
    <property name="text">
-    <string>Enter your password</string>
+    <string/>
    </property>
    <property name="echoMode">
-    <enum>QLineEdit::Normal</enum>
+    <enum>QLineEdit::Password</enum>
    </property>
    <property name="placeholderText">
     <string>Enter your password</string>
@@ -337,7 +337,7 @@ background-color: rgb(94, 34, 127);
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../../img/login/k.qrc">:/newPrefix/Untitled design (1).svg</pixmap>
+    <pixmap resource="../../qrc/login/background_design.qrc">:/newPrefix/background_design.svg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -466,7 +466,7 @@ background-color: rgba(0,0,0,0%);</string>
   <zorder>label_11</zorder>
  </widget>
  <resources>
-  <include location="../../img/login/k.qrc"/>
+  <include location="../../qrc/login/background_design.qrc"/>
  </resources>
  <connections/>
 </ui>

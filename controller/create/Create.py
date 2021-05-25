@@ -6,14 +6,15 @@ from PyQt5.uic import loadUi
 
 from model.Database import Database
 from model.AccountType import AccountType
+import view.qrc.signup.background_design
 
 class Create(QDialog):
     def __init__(self, widget):
         super(Create, self).__init__()
         loadUi(os.path.join(os.getcwd(), "view/ui/signup/createaccount.ui"), self)
-        self.sqlStatement = ""
         self.widget = widget
-        self.sqlData = []
+        self.sqlData_user = []
+        self.sqlData_student = []
         
         self.signup_buttn.clicked.connect(self.signup)
         self.login.clicked.connect(self.openLogin)
@@ -22,29 +23,29 @@ class Create(QDialog):
         self.loadYearComboBox()
     
     def loadCourseComboBox(self):
-        self.sqlStatement = 'SELECT * FROM `course`;'
+        sqlStatement = 'SELECT * FROM `course`;'
 
         items = None
+        database = Database()
         try:
-            database = Database()
-            items = database.selectAll(self.sqlStatement)
-            del database
+            items = database.select(sqlStatement)
         except Exception as e:
             print(e)
+        del database
         
         for item in items:
             self.course_box.addItem(item[1], item[0])
     
     def loadYearComboBox(self):
-        self.sqlStatement = 'SELECT * FROM `year_level`;'
+        sqlStatement = 'SELECT * FROM `year_level`;'
 
         items = None
+        database = Database()
         try:
-            database = Database()
-            items = database.selectAll(self.sqlStatement)
-            del database
+            items = database.select(sqlStatement)
         except Exception as e:
             print(e)
+        del database
         
         for item in items:
             self.year_level.addItem(item[1], item[0])
@@ -54,25 +55,32 @@ class Create(QDialog):
         if errorString:
             print(errorString)
         else:
-            self.sqlStatement = """
+            sqlStatement_user = """
                 INSERT INTO `user` (
                     `first_name`, `last_name`, 
-                    `school_id`, `password`, 
-                    `course`, `year`, `type`
-                ) VALUES (%s, %s, %s, %s, %s, %s, %s);
+                    `school_id`, `password`, `type`
+                ) VALUES (%s, %s, %s, %s, %s);
             """
 
+            sqlStatement_student = """
+                INSERT INTO `user_student` (
+                    `id`, `course`, `year`
+                ) VALUES (LAST_INSERT_ID(), %s, %s);
+            """
+
+            database = Database()
             try:
-                database = Database()
-                database.insert(self.sqlStatement, tuple(self.sqlData))
-                del database
+                database.insert(sqlStatement_user, tuple(self.sqlData_user))
+                database.insert(sqlStatement_student, tuple(self.sqlData_student))
 
                 self.openLogin()
             except Exception as e:
                 print(e)
                 print('School ID already exists')
             finally:
-                self.sqlData.clear()
+                del database
+                self.sqlData_user.clear()
+                self.sqlData_student.clear()
     
     def clearFields(self):
         self.first_name.setText('')
@@ -88,39 +96,39 @@ class Create(QDialog):
         self.widget.resize(1000, 600)
     
     def checkFields(self):
-        self.sqlData.clear()
+        self.sqlData_user.clear()
         errorString = ''
         if self.first_name.text() != '':
-            self.sqlData.append(self.first_name.text()) # First name
+            self.sqlData_user.append(self.first_name.text().title()) # First name
         else:
             errorString += "- First name can't be blank\n"
         
         if self.last_name.text() != '':
-            self.sqlData.append(self.last_name.text()) # Last name
+            self.sqlData_user.append(self.last_name.text().title()) # Last name
         else:
             errorString += "- Last name can't be blank\n"
         
         if self.username_edit_2.text() != '':
-            self.sqlData.append(self.username_edit_2.text()) # School ID
+            self.sqlData_user.append(self.username_edit_2.text()) # School ID
         else:
             errorString += "- School ID can't be blank\n"
         
         if self.password_edit.text() != '':
-            self.sqlData.append(self.password_edit.text()) # Password
+            self.sqlData_user.append(self.password_edit.text()) # Password
         else:
             errorString += "- School ID can't be blank\n"
+
+        self.sqlData_user.append(AccountType().STUDENT)
         
         if self.course_box.itemData(self.course_box.currentIndex()) != None:
-            self.sqlData.append(self.course_box.itemData(self.course_box.currentIndex())) # Course
+            self.sqlData_student.append(self.course_box.itemData(self.course_box.currentIndex())) # Course
         else:
             errorString += "- Please choose your course\n"
 
         if self.year_level.itemData(self.year_level.currentIndex()) != None:
-            self.sqlData.append(self.year_level.itemData(self.year_level.currentIndex())) # Year Level
+            self.sqlData_student.append(self.year_level.itemData(self.year_level.currentIndex())) # Year Level
         else:
             errorString += "- Please choose an your year level\n"
-
-        self.sqlData.append(AccountType().STUDENT)
 
         return errorString
         

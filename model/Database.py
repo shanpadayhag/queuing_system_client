@@ -10,7 +10,7 @@ class Database:
         )
         self.csr = self.conn.cursor()
 
-    def selectAll(self, sqlStatement, sqlData = None):
+    def select(self, sqlStatement, sqlData = None):
         if sqlData == None:
             self.csr.execute(sqlStatement)
         else:
