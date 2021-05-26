@@ -5,6 +5,7 @@ from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.uic import loadUi
 
 from model.Database import Database
+from model.ApplicationPage import ApplicationPage
 from model.AccountType import AccountType
 import view.qrc.signup.background_design
 
@@ -15,6 +16,8 @@ class Create(QDialog):
         self.widget = widget
         self.sqlData_user = []
         self.sqlData_student = []
+        self.applicationPage = ApplicationPage()
+        self.accountType = AccountType()
         
         self.signup_buttn.clicked.connect(self.signup)
         self.login.clicked.connect(self.openLogin)
@@ -70,8 +73,8 @@ class Create(QDialog):
 
             database = Database()
             try:
-                database.insert(sqlStatement_user, tuple(self.sqlData_user))
-                database.insert(sqlStatement_student, tuple(self.sqlData_student))
+                database.save(sqlStatement_user, tuple(self.sqlData_user))
+                database.save(sqlStatement_student, tuple(self.sqlData_student))
 
                 self.openLogin()
             except Exception as e:
@@ -92,7 +95,7 @@ class Create(QDialog):
 
     def openLogin(self):
         self.clearFields()
-        self.widget.setCurrentIndex(0)
+        self.widget.setCurrentIndex(self.applicationPage.LOGIN)
         self.widget.resize(1000, 600)
     
     def checkFields(self):
@@ -118,7 +121,7 @@ class Create(QDialog):
         else:
             errorString += "- School ID can't be blank\n"
 
-        self.sqlData_user.append(AccountType().STUDENT)
+        self.sqlData_user.append(self.accountType.STUDENT)
         
         if self.course_box.itemData(self.course_box.currentIndex()) != None:
             self.sqlData_student.append(self.course_box.itemData(self.course_box.currentIndex())) # Course

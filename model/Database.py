@@ -17,7 +17,7 @@ class Database:
             self.csr.execute(sqlStatement, sqlData)
         return self.csr.fetchall()
 
-    def insert(self, sqlStatement, sqlData):
+    def save(self, sqlStatement, sqlData):
         self.csr.execute(sqlStatement, sqlData)
         self.conn.commit()
 
