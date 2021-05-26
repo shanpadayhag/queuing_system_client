@@ -24,10 +24,29 @@ def createTables():
     csr = conn.cursor()
 
     sqlStatement = """
+        CREATE TABLE `number` (
+            `cs` int NOT NULL,
+            `emc` int NOT NULL,
+            `is` int NOT NULL,
+            `it` int NOT NULL,
+            PRIMARY KEY (`cs`,`emc`,`is`,`it`)
+        );
+
         CREATE TABLE `course` (
             `id` int NOT NULL AUTO_INCREMENT,
             `name` varchar(255) NOT NULL,
             PRIMARY KEY (`id`)
+        );
+
+        CREATE TABLE `enrollment` (
+            `id` int NOT NULL AUTO_INCREMENT,
+            `queue` varchar(255) NOT NULL,
+            `name` varchar(255) NOT NULL,
+            `course` int NOT NULL,
+            `enrolled_at` datetime NOT NULL,
+            PRIMARY KEY (`id`),
+            KEY `enrollment_course_idx` (`course`),
+            CONSTRAINT `enrollment_course` FOREIGN KEY (`course`) REFERENCES `course` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
         );
 
         CREATE TABLE `year_level` (
@@ -77,17 +96,17 @@ def addData():
     csr = conn.cursor()
 
     sqlStatement = """
-        INSERT INTO `course` (`name`) VALUES ('');
         INSERT INTO `course` (`name`) VALUES ('Computer Science');
         INSERT INTO `course` (`name`) VALUES ('Entertainment and Multimedia Computing');
         INSERT INTO `course` (`name`) VALUES ('Information System');
         INSERT INTO `course` (`name`) VALUES ('Information Technology');
         
-        INSERT INTO `year_level` (`year`) VALUES ('');
         INSERT INTO `year_level` (`year`) VALUES ('First Year');
         INSERT INTO `year_level` (`year`) VALUES ('Second Year');
         INSERT INTO `year_level` (`year`) VALUES ('Third Year');
         INSERT INTO `year_level` (`year`) VALUES ('Fourth Year');
+
+        INSERT INTO `number` (`cs`, `emc`, `is`, `it`) VALUES ('0', '0', '0', '0');
     """
     for statement in sqlStatement.split(';'):
         if statement.strip() != '':
