@@ -390,9 +390,9 @@ background-color: rgb(94, 34, 127);
   <widget class="QLabel" name="label_14">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>90</x>
      <y>100</y>
-     <width>181</width>
+     <width>321</width>
      <height>31</height>
     </rect>
    </property>
@@ -417,13 +417,16 @@ background-color: rgba(0,0,0,0%);</string>
    <property name="text">
     <string>WELCOME</string>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
   </widget>
   <widget class="QLabel" name="label_15">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>130</y>
-     <width>291</width>
+     <x>90</x>
+     <y>140</y>
+     <width>321</width>
      <height>31</height>
     </rect>
    </property>
@@ -447,6 +450,9 @@ background-color: rgba(0,0,0,0%);</string>
    </property>
    <property name="text">
     <string>Please login your account</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <zorder>Queue_2</zorder>
