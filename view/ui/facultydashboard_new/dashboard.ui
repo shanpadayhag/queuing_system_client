@@ -1,0 +1,1310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1000</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+	background-image: url(:/newPrefix/img/ck.svg);
+}
+
+QGroupBox { 
+border: 0px solid;
+	border-radius : 16px;
+background-color: rgba(0,0,0,0%);
+}
+
+QPushButton {
+	color: rgb(255, 255, 255);
+	
+	background-color: rgb(90, 24, 136);
+	border: 0px solid;
+	border-radius : 16px;
+	font: bold 18px;
+}
+
+QPushButton:hover {	
+	background-color: rgb(151, 9, 206);
+	color: rgb(255, 255, 255);
+}
+
+#appoint {
+QPushButton 
+	color: rgb(255, 255, 255);
+	
+	background-color: rgb(90, 24, 136);
+	border: 0px solid;
+	border-radius : 2px;
+	font: bold 18px; }
+#appoint:hover {
+	background-color: rgb(151, 9, 206);
+	color: rgb(255, 255, 255);
+}
+
+#stack {
+background-color: rgba(0,0,0,0%)
+}
+
+#hover2 {
+QPushButton
+	color: rgb(255, 255, 255);
+	
+	
+	background-color: qlineargradient(spread:pad, x1:0.711443, y1:1, x2:1, y2:0.114, stop:0 rgba(87, 0, 155, 255), stop:1 rgba(198, 71, 255, 255));
+	border: 0px solid;
+	border-radius : 16px;
+	font: bold 18px;
+}
+
+#hover2:hover {	
+	
+	background-color: rgb(90, 24, 136);
+	color: rgb(255, 255, 255);
+}
+</string>
+  </property>
+  <widget class="QGroupBox" name="groupIcons">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>170</y>
+     <width>81</width>
+     <height>251</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QPushButton" name="appoint">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>60</y>
+      <width>81</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>img/APPOINT.svg</normaloff>img/APPOINT.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>81</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>img/home.svg</normaloff>img/home.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="appoint_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>120</y>
+      <width>81</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>img/logout.svg</normaloff>img/logout.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
+    </property>
+   </widget>
+   <zorder>appoint_2</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>appoint</zorder>
+  </widget>
+  <widget class="QStackedWidget" name="stack">
+   <property name="geometry">
+    <rect>
+     <x>49</x>
+     <y>0</y>
+     <width>951</width>
+     <height>601</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+background-color: rgb(107, 29, 163);
+border-radius : 18px;
+border:0px;
+	color: rgb(255, 255, 255);
+font : bold 20px;
+
+}
+#curren_A_2{
+font:bold 20px; 
+}
+#welcom
+{
+background-color: rgba(0,0,0,0%);
+font: bold 18px;
+	color: rgb(255, 255, 255);
+}
+
+#circle {
+
+background-color: rgba(0,0,0,0%);
+font: bold 18px;
+color: rgb(90, 24, 136);
+}
+
+#description{
+background-color: rgba(0,0,0,0%);
+}
+#description_2 {
+
+background-color: rgba(0,0,0,0%);
+
+}
+
+#hello {
+background-color: rgba(0,0,0,0%);
+font: bold 40px;
+	color: rgb(255, 255, 255);
+}
+#professorsname
+{
+background-color: rgba(0,0,0,0%);
+font: bold 40px;
+	color: rgb(255, 255, 255);
+}
+
+
+#lable_6{
+background-color: rgba(0,0,0,0%);
+}
+#label_4 {
+	background-color: qconicalgradient(cx:1, cy:1, angle:30.3, stop:0 rgba(213, 0, 255, 255), stop:0.746269 rgba(28, 28, 144, 255));
+
+}
+#label_2 {
+	background-color: rgb(240, 240, 240);
+color:black;
+
+}
+
+#label_3 {
+	background-color: rgb(240, 240, 240);
+color:black;
+}
+
+#current {
+background-color: rgba(0,0,0,0%)
+}
+#current_2 {
+background-color: rgba(0,0,0,0%);
+}
+
+#current__A {
+background-color: rgba(0,0,0,0%);
+}
+
+#listWidget {
+	
+	background-color: rgb(205, 162, 227);
+	margin-bottom: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	border-radius: 15px;
+	gridline-color: rgba(47, 56, 67, 150);
+	font-size: 15px;
+}
+
+#listWidget::item {
+	
+	
+	background-color: rgb(90, 24, 136);
+	color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#listWidget::item:selected{
+	background-color: rgb(169, 71, 254);
+	
+}
+
+
+#listWidget QHeaderView {
+	background-color: transparent;
+}
+
+QScrollBar:vertical {
+	border: none;
+    background: rgb(52, 59, 72);
+    width: 10px;
+    margin: 15px 0;
+ }
+
+QScrollBar:horizontal {
+    border: none;
+    background: rgb(52, 59, 72);
+    height: 10px;
+    margin: 0px 15px;
+}
+
+ QScrollBar::handle:vertical {	
+	
+	background-color: rgb(205, 162, 227);
+    min-height: 25px;
+	border-radius: 4px
+ }
+
+QScrollBar::handle:horizontal {
+    background: rgb(140, 160, 180);
+    min-width: 25px;
+	border-radius: 4px
+}
+
+ QScrollBar::add-line:vertical {
+	border: none;
+	background-color: rgb(147, 50, 157);
+	height: 15px;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	subcontrol-position: bottom;
+	subcontrol-origin: margin;
+ }
+
+ QScrollBar::sub-line:vertical {
+	border: none;
+	background: rgb(55, 63, 77);
+	height: 20px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	subcontrol-position: top;
+	subcontrol-origin: margin;
+ }
+
+QScrollBar::add-line:horizontal {
+    border: none;
+    background: rgb(55, 63, 77);
+    width: 20px;
+	border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:horizontal {
+    border: none;
+    background: rgb(55, 63, 77);
+    width: 20px;
+	border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:vertical
+{
+     background: none;
+}
+
+ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+     background: none;
+ }
+
+QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:horizontal
+{
+     background: none;
+}
+
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
+{
+     background: none;
+}
+#label {
+background-color: rgba(0,0,0,0%);
+color:black;
+}
+
+QLineEdit {
+	background-color: rgba(88, 105, 126, 150);
+	border: none;
+	outline: none;
+	padding: 0 10px;
+	margin: 0 10px;
+	height: 35px;
+	border-radius: 10px;
+	color: rgb(255, 255, 255);
+	font-size: 15px
+}
+
+#ListWidget {
+	background-color: rgba(88, 105, 126, 50);
+	margin-bottom: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	border-radius: 10px;
+	gridline-color: rgba(47, 56, 67, 150);
+	font-size: 15px;
+}
+QStackedWidget {
+	
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 0, 42), stop:1 rgba(219, 219, 219, 12));
+}</string>
+   </property>
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
+   <widget class="QWidget" name="home">
+    <widget class="QGroupBox" name="groupie">
+     <property name="geometry">
+      <rect>
+       <x>510</x>
+       <y>280</y>
+       <width>411</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+
+background-color: rgba(0,0,0,0%);
+font: bold 15px;
+	color: rgb(255, 255, 255);
+}
+
+#gmail{
+color: rgb(203, 107, 230);
+
+}
+#professorName{
+	font: 8pt &quot;MS Shell Dlg 2&quot;;
+
+}
+
+#id{
+	font: 8pt &quot;MS Shell Dlg 2&quot;;
+
+}
+QGroupBox {
+	background-color: rgb(107, 29, 163);
+border-radius : 18px;
+border:0px;
+}</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QLabel" name="circle">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>70</y>
+        <width>181</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>img/circle3.svg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="myprofile">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>27</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>My Profile</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="myprofile_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(203, 107, 230);</string>
+      </property>
+      <property name="text">
+       <string>100%</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="myprofile_3">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>50</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>You're Progress</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="professorName">
+      <property name="geometry">
+       <rect>
+        <x>67</x>
+        <y>130</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Severus Snape</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="id">
+      <property name="geometry">
+       <rect>
+        <x>73</x>
+        <y>150</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>20150018795</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="gmail">
+      <property name="geometry">
+       <rect>
+        <x>39</x>
+        <y>182</y>
+        <width>161</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>severus@gmail.com</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="hover">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>411</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <zorder>hover</zorder>
+     <zorder>circle</zorder>
+     <zorder>myprofile</zorder>
+     <zorder>myprofile_2</zorder>
+     <zorder>myprofile_3</zorder>
+     <zorder>professorName</zorder>
+     <zorder>id</zorder>
+     <zorder>gmail</zorder>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>30</y>
+       <width>831</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox {
+	
+	background-color: qlineargradient(spread:pad, x1:0.711443, y1:1, x2:1, y2:0.114, stop:0 rgba(87, 0, 155, 255), stop:1 rgba(198, 71, 255, 255));
+border-radius : 18px;
+border:0px;
+}</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>-60</y>
+        <width>211</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0,0,0,0%);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>img/prfessors2.svg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="hello">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>50</y>
+        <width>121</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Hello,</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="professorsname">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>60</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Professor</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="description">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>120</y>
+        <width>361</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 7pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Your students are waiting on queue. See your next queuing lists.</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="description_2">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>140</y>
+        <width>341</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 7pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>For more information and concerns, please contact the desk</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="hover2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>831</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="hello_2">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>0</y>
+        <width>221</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0,0,0,0%)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>img/BOOK.svg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <zorder>hover2</zorder>
+     <zorder>label_5</zorder>
+     <zorder>hello</zorder>
+     <zorder>hello_2</zorder>
+     <zorder>description_2</zorder>
+     <zorder>description</zorder>
+     <zorder>professorsname</zorder>
+    </widget>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>280</y>
+       <width>391</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+
+background-color: rgba(0,0,0,0%);
+font: bold 15px;
+	color: rgb(255, 255, 255);
+}
+QGroupBox {
+	background-color: rgb(107, 29, 163);
+border-radius : 18px;
+border:0px;
+}</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>90</y>
+        <width>121</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>img/ON.svg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="prioritynumber_2">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>120</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;PRIORITY NUM&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="professorsname_2">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>90</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Mark Mcphee</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>391</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#curren_A_2{
+font:bold 20px; 
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="professorsname_3">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>240</y>
+        <width>171</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Current Appointment</string>
+      </property>
+     </widget>
+     <zorder>pushButton_2</zorder>
+     <zorder>label_6</zorder>
+     <zorder>prioritynumber_2</zorder>
+     <zorder>professorsname_2</zorder>
+     <zorder>professorsname_3</zorder>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="appointment">
+    <widget class="QGroupBox" name="nowserving">
+     <property name="geometry">
+      <rect>
+       <x>489</x>
+       <y>180</y>
+       <width>421</width>
+       <height>401</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+QGroupBox {
+	background-color: rgb(107, 29, 163);
+border-radius : 18px;
+border:0px;
+}
+
+#person {
+border-radius : 20px;
+	background-color: rgb(89, 24, 134);
+border:0px;
+}
+
+#name {
+background-color: rgba(0,0,0,0%)
+}
+
+#course {
+background-color: rgba(0,0,0,0%)
+
+}
+
+#schoolID {
+background-color: rgba(0,0,0,0%)
+}
+
+#yearlevel{
+background-color: rgba(0,0,0,0%)
+
+}
+#tableWidget {
+	
+	background-color: rgb(90, 24, 136);
+	margin-bottom: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-radius: 10px;
+	gridline-color:rgba(90, 24, 136);
+	font-size: 18px;
+}
+
+#tableWidget::item {
+	
+	color: rgb(255, 255, 255);
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#tableWidget::item:selected{
+	
+	background-color: rgb(205, 162, 227);
+}
+
+#tableWidget QHeaderView::section{
+	background-color: rgb(205, 162, 227);
+	border-style: none;
+    border-bottom: 0px solid rgba(61, 73, 88, 150);
+   	border-right: 0px solid rgba(61, 73, 88, 150);
+	color: rgb(255, 255, 255);
+	font-size: 15px;
+	font-weight: 600;
+	border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+#tableWidget QHeaderView {
+	background-color: transparent;
+}
+</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>200</y>
+        <width>331</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <row>
+       <property name="text">
+        <string/>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>Date</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Time</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+      </column>
+      <item row="0" column="0">
+       <property name="text">
+        <string>May 31,2021</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+      </item>
+      <item row="0" column="1">
+       <property name="text">
+        <string>4:30 PM</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="accept_butnn">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>310</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Accept</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="decline_buttn">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>310</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Decline</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="student_details">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>351</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="course">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>70</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 7pt &quot;MS Shell Dlg 2&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Information Technology</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="yearlevel">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>50</y>
+         <width>71</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 7pt &quot;MS Shell Dlg 2&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Second Year</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="schoolID">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>90</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 7pt &quot;MS Shell Dlg 2&quot;;</string>
+       </property>
+       <property name="text">
+        <string>20190018799</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="name">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>30</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Justin Bieber</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="person">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>10</y>
+         <width>141</width>
+         <height>121</height>
+        </rect>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>img/person2.svg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+       </property>
+       <property name="margin">
+        <number>15</number>
+       </property>
+       <property name="indent">
+        <number>-1</number>
+       </property>
+      </widget>
+     </widget>
+     <zorder>student_details</zorder>
+     <zorder>tableWidget</zorder>
+     <zorder>accept_butnn</zorder>
+     <zorder>decline_buttn</zorder>
+    </widget>
+    <widget class="QListWidget" name="listWidget">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>79</y>
+       <width>400</width>
+       <height>521</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Selena Gomez</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>40</y>
+       <width>165</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Waiting</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>20</y>
+       <width>431</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+
+background-color: rgba(0,0,0,0%);
+font: bold 20px;
+	color: rgb(255, 255, 255);
+}
+QGroupBox {
+	background-color: rgb(107, 29, 163);
+border-radius : 18px;
+border:0px;
+}</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>131</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>img/ON.svg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="prioritynumber_3">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>70</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;QUEUE NUMBER&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="professorsname_4">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>30</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Mark Mcphee</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>431</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#curren_A_2{
+font:bold 20px; 
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <zorder>pushButton_3</zorder>
+     <zorder>label_7</zorder>
+     <zorder>prioritynumber_3</zorder>
+     <zorder>professorsname_4</zorder>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>159</y>
+       <width>161</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Next Queue</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <zorder>stack</zorder>
+  <zorder>groupIcons</zorder>
+ </widget>
+ <resources>
+  <include location="i.qrc"/>
+ </resources>
+ <connections/>
+</ui>

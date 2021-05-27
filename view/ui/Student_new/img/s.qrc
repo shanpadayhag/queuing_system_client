@@ -1,0 +1,24 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>add.svg</file>
+    <file>add2.svg</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>bg22.svg</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>bg22.svg</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>up.svg</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>down.svg</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>bg.svg</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>bg2.svg</file>
+  </qresource>
+</RCC>
