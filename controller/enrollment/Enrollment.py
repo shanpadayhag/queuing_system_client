@@ -83,7 +83,7 @@ class Enrollment(QDialog):
             4: 'IT',
         }
 
-        return course.get(id, 0)
+        return course[id]
     
     def getNumber(self, course):
         sqlStatement = {

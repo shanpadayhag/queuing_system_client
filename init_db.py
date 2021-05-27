@@ -77,6 +77,20 @@ def createTables():
             CONSTRAINT `student_user` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
             CONSTRAINT `student_year` FOREIGN KEY (`year`) REFERENCES `year_level` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
         );
+
+        CREATE TABLE `appointment` (
+            `id` int NOT NULL AUTO_INCREMENT,
+            `student` int NOT NULL,
+            `teacher` int NOT NULL,
+            `reason` varchar(255) NOT NULL,
+            `date` date NOT NULL,
+            `time` time NOT NULL,
+            PRIMARY KEY (`id`),
+            KEY `appointment_student_idx` (`student`),
+            KEY `appointment_teacher_idx` (`teacher`),
+            CONSTRAINT `appointment_student` FOREIGN KEY (`student`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+            CONSTRAINT `appointment_teacher` FOREIGN KEY (`teacher`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+        );
     """
     for statement in sqlStatement.split(';'):
         if statement.strip() != '':
