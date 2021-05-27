@@ -33,15 +33,13 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QDialog {
-	
-	
 	background-image: url(:/newPrefix/bg22.svg);
 }
 
 QGroupBox { 
-border: 0px solid;
+	border: 0px solid;
 	border-radius : 16px;
-background-color: rgba(0,0,0,0%);
+	background-color: rgba(0,0,0,0%);
 }
 
 QPushButton {
@@ -119,7 +117,7 @@ QPushButton
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../facultydashboard_new/img/home.svg</normaloff>../facultydashboard_new/img/home.svg</iconset>
+      <normaloff>../teacher/img/home.svg</normaloff>../teacher/img/home.svg</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -180,6 +178,13 @@ border-radius: 20px;
 font: bold 18px;
 }
 
+#set_3{
+	background-color: rgb(250, 250, 250);
+	color:black;
+	border:0px;
+	border-radius: 20px;
+	font: bold 18px;
+}
 
 #set_2{
 	background-color: rgb(240, 240, 240);
@@ -262,16 +267,15 @@ font:18px;
 	margin-right: 20px;
 	border-radius: 15px;
 	gridline-color: rgba(47, 56, 67, 150);
-	font-size: bold 20px;
+	font: bold 15px;
 
 }
 
 #list::item {
-	background-color: rgb(90, 24, 136);
+	background-color: rgba(90, 24, 136, 0);
 	color: white;
 	padding-left: 20px;
 	padding-right: 20px;
-font:20px;
 }
 QScrollBar:vertical {
 	border: none;
@@ -693,7 +697,7 @@ padding-left: 40px;
        </font>
       </property>
       <property name="placeholderText">
-       <string>type your purpose or message</string>
+       <string>Reason for appointment</string>
       </property>
      </widget>
      <widget class="QPushButton" name="accept_butnn">
@@ -719,56 +723,27 @@ padding-left: 40px;
        </rect>
       </property>
       <property name="text">
-       <string>Set Your appointment</string>
+       <string>Set your appointment</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QComboBox" name="combo">
+     <widget class="QLabel" name="set_3">
       <property name="geometry">
        <rect>
         <x>390</x>
         <y>230</y>
         <width>261</width>
-        <height>51</height>
+        <height>41</height>
        </rect>
       </property>
-      <item>
-       <property name="text">
-        <string>Select Faculty</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Cristina Amor Cajilla</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Heidi Obial Jaquilmac</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Florence Reyes</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Patrick Lowee Oliva</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Maria Ramila Jimenez</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Jessie Christopher Lagrosas</string>
-       </property>
-      </item>
+      <property name="text">
+       <string>Faculty</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
      </widget>
     </widget>
     <widget class="QGroupBox" name="groupy2">
@@ -789,7 +764,7 @@ padding-left: 40px;
         <x>-10</x>
         <y>80</y>
         <width>311</width>
-        <height>301</height>
+        <height>331</height>
        </rect>
       </property>
       <item>
@@ -890,7 +865,7 @@ padding-left: 40px;
   <zorder>groupIcons</zorder>
  </widget>
  <resources>
-  <include location="img/s.qrc"/>
+  <include location="../../qrc/student/student.qrc"/>
  </resources>
  <connections/>
 </ui>

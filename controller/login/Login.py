@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QDialog
 from PyQt5.uic import loadUi
 
 from model.Database import Database
+from model.Session import Session
 from model.ApplicationPage import ApplicationPage
 from model.AccountType import AccountType
 import view.qrc.login.background_design
@@ -28,6 +29,8 @@ class Login(QDialog):
 
         if (self.checkCredentials()):
             self.openAccount()
+            self.email_edit.setText('')
+            self.Password_edit.setText('')
         else:
             print("Please recheck credentials")
     
@@ -42,6 +45,14 @@ class Login(QDialog):
             self.sqlData.clear()
         del database
 
+        session = Session()
+        try:
+            session.clearCurrentUser()
+            session.updateCurrentUser(self.session[0])
+        except Exception as e:
+            print(e)
+        del session
+
         if self.session:
             return True
         else:
@@ -55,7 +66,7 @@ class Login(QDialog):
             self.widget.setCurrentIndex(self.applicationPage.TEACHER)
 
         elif self.session[5] == self.accountType.STUDENT:
-            self.widget.setCurrentIndex(self.applicationPage.STUDENT)
+            self.widget.setCurrentIndex(self.applicationPage.ADMIN)
             
         self.session.clear()
     

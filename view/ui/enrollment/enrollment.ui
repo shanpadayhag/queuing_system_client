@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>799</width>
-    <height>600</height>
+    <height>601</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,7 +44,7 @@ QDialog {
 	background-color: rgb(255, 255, 255);
 }
 
-#combocourse
+#courseCombobox
 {
 	color: rgb(107, 29, 163);
 
@@ -55,7 +55,7 @@ font: bold 20px;
 padding-left: 40px;
 }
 
-#combo:hover {
+#courseCombobox:hover {
 	
 	background-color:white;
 	
@@ -64,7 +64,7 @@ padding-left: 40px;
 
 
 #nameField {
-	color: #fff;
+	color: #000;
 	padding: 10px 10px;
 	
 	background-color: rgb(236, 236, 236);
@@ -281,7 +281,7 @@ QPushButton
      <string>Course</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="combocourse">
+   <widget class="QComboBox" name="courseCombobox">
     <property name="geometry">
      <rect>
       <x>10</x>

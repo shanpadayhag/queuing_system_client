@@ -11,3 +11,4 @@ controller/enrollment/__pycache__
 model/__pycache__
 view/qrc/login/__pycache__
 view/qrc/signup/__pycache__
+view/qrc/student/__pycache__
