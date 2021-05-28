@@ -33,7 +33,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QDialog {
-	background-image: url(:/newPrefix/img/ck.svg);
+	background-image: url(:/newPrefix/ck.svg);
 }
 
 QGroupBox { 
@@ -266,7 +266,6 @@ background-color: rgba(0,0,0,0%);
 }
 
 #listWidget {
-	
 	background-color: rgb(205, 162, 227);
 	margin-bottom: 20px;
 	margin-left: 20px;
@@ -277,17 +276,17 @@ background-color: rgba(0,0,0,0%);
 }
 
 #listWidget::item {
-	
-	
-	background-color: rgb(90, 24, 136);
-	color: white;
+	background-color: rgba(90, 24, 136, 0);
+	color: black;
 	padding-left: 20px;
 	padding-right: 20px;
+	padding-top: 3px;
+	padding-bottom: 2px;
 }
 
 #listWidget::item:selected{
 	background-color: rgb(169, 71, 254);
-	
+	color: white;
 }
 
 
@@ -437,14 +436,14 @@ color: rgb(203, 107, 230);
 
 }
 #professorName{
-	font: 8pt &quot;MS Shell Dlg 2&quot;;
+	font: regular 13px;
 
 }
 
 #id{
-	font: 8pt &quot;MS Shell Dlg 2&quot;;
-
+	font: regular 13px;
 }
+
 QGroupBox {
 	background-color: rgb(107, 29, 163);
 border-radius : 18px;
@@ -527,9 +526,9 @@ border:0px;
      <widget class="QLabel" name="professorName">
       <property name="geometry">
        <rect>
-        <x>67</x>
+        <x>7</x>
         <y>130</y>
-        <width>91</width>
+        <width>181</width>
         <height>20</height>
        </rect>
       </property>
@@ -539,13 +538,16 @@ border:0px;
       <property name="text">
        <string>Severus Snape</string>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
      </widget>
      <widget class="QLabel" name="id">
       <property name="geometry">
        <rect>
-        <x>73</x>
+        <x>23</x>
         <y>150</y>
-        <width>91</width>
+        <width>161</width>
         <height>20</height>
        </rect>
       </property>
@@ -555,13 +557,16 @@ border:0px;
       <property name="text">
        <string>20150018795</string>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
      </widget>
      <widget class="QLabel" name="gmail">
       <property name="geometry">
        <rect>
-        <x>39</x>
-        <y>182</y>
-        <width>161</width>
+        <x>10</x>
+        <y>180</y>
+        <width>181</width>
         <height>20</height>
        </rect>
       </property>
@@ -570,6 +575,9 @@ border:0px;
       </property>
       <property name="text">
        <string>severus@gmail.com</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
      <widget class="QPushButton" name="hover">
@@ -651,8 +659,8 @@ border:0px;
      <widget class="QLabel" name="hello">
       <property name="geometry">
        <rect>
-        <x>420</x>
-        <y>50</y>
+        <x>430</x>
+        <y>40</y>
         <width>121</width>
         <height>61</height>
        </rect>
@@ -667,8 +675,8 @@ border:0px;
      <widget class="QLabel" name="professorsname">
       <property name="geometry">
        <rect>
-        <x>540</x>
-        <y>60</y>
+        <x>550</x>
+        <y>50</y>
         <width>201</width>
         <height>41</height>
        </rect>
@@ -680,33 +688,39 @@ border:0px;
      <widget class="QLabel" name="description">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>120</y>
-        <width>361</width>
+        <x>360</x>
+        <y>110</y>
+        <width>381</width>
         <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 7pt &quot;MS Shell Dlg 2&quot;;</string>
+       <string notr="true">font: 12px &quot;MS Shell Dlg 2&quot;;</string>
       </property>
       <property name="text">
        <string>Your students are waiting on queue. See your next queuing lists.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="description_2">
       <property name="geometry">
        <rect>
-        <x>420</x>
-        <y>140</y>
-        <width>341</width>
+        <x>360</x>
+        <y>130</y>
+        <width>381</width>
         <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 7pt &quot;MS Shell Dlg 2&quot;;</string>
+       <string notr="true">font: 12px &quot;MS Shell Dlg 2&quot;;</string>
       </property>
       <property name="text">
        <string>For more information and concerns, please contact the desk</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
      <widget class="QPushButton" name="hover2">
@@ -799,27 +813,33 @@ border:0px;
      <widget class="QLabel" name="prioritynumber_2">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>120</y>
-        <width>151</width>
+        <x>10</x>
+        <y>140</y>
+        <width>231</width>
         <height>31</height>
        </rect>
       </property>
       <property name="text">
        <string>&lt;PRIORITY NUM&gt;</string>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
      </widget>
      <widget class="QLabel" name="professorsname_2">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>90</y>
-        <width>101</width>
+        <x>10</x>
+        <y>100</y>
+        <width>231</width>
         <height>41</height>
        </rect>
       </property>
       <property name="text">
        <string>Mark Mcphee</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_2">
@@ -843,14 +863,17 @@ font:bold 20px;
      <widget class="QLabel" name="professorsname_3">
       <property name="geometry">
        <rect>
-        <x>100</x>
+        <x>10</x>
         <y>240</y>
-        <width>171</width>
+        <width>371</width>
         <height>41</height>
        </rect>
       </property>
       <property name="text">
-       <string>Current Appointment</string>
+       <string>Latest appointment</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <zorder>pushButton_2</zorder>
@@ -880,14 +903,14 @@ font:bold 20px;
       <string notr="true">
 QGroupBox {
 	background-color: rgb(107, 29, 163);
-border-radius : 18px;
-border:0px;
+	border-radius : 18px;
+	border:0px;
 }
 
 #person {
-border-radius : 20px;
+	border-radius : 20px;	
 	background-color: rgb(89, 24, 134);
-border:0px;
+	border:0px;
 }
 
 #name {
@@ -908,25 +931,22 @@ background-color: rgba(0,0,0,0%)
 
 }
 #tableWidget {
-	
 	background-color: rgb(90, 24, 136);
 	margin-bottom: 5px;
 	margin-left: 10px;
 	margin-right: 10px;
 	border-radius: 10px;
-	gridline-color:rgba(90, 24, 136);
-	font-size: 18px;
+	gridline-color:rgb(90, 24, 136);
+	font-size: 13px;
 }
 
 #tableWidget::item {
-	
 	color: rgb(255, 255, 255);
 	padding-left: 20px;
 	padding-right: 20px;
 }
 
 #tableWidget::item:selected{
-	
 	background-color: rgb(205, 162, 227);
 }
 
@@ -969,6 +989,12 @@ background-color: rgba(0,0,0,0%)
       <property name="styleSheet">
        <string notr="true"/>
       </property>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
       <row>
        <property name="text">
         <string/>
@@ -983,6 +1009,9 @@ background-color: rgba(0,0,0,0%)
          <pointsize>10</pointsize>
         </font>
        </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
       </column>
       <column>
        <property name="text">
@@ -994,19 +1023,27 @@ background-color: rgba(0,0,0,0%)
         </font>
        </property>
       </column>
+      <column>
+       <property name="text">
+        <string>Reason</string>
+       </property>
+      </column>
       <item row="0" column="0">
        <property name="text">
-        <string>May 31,2021</string>
+        <string/>
        </property>
        <property name="font">
         <font>
          <pointsize>9</pointsize>
         </font>
        </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
       </item>
       <item row="0" column="1">
        <property name="text">
-        <string>4:30 PM</string>
+        <string/>
        </property>
        <property name="font">
         <font>
@@ -1050,68 +1087,97 @@ background-color: rgba(0,0,0,0%)
         <height>141</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	font-size: 15px;
+}
+
+#course {
+	font: regular 13px;
+}
+
+#schoolID {
+	font: regular 13px;
+}
+
+#yearlevel {
+	font: regular 13px;
+}</string>
+      </property>
       <property name="title">
        <string/>
       </property>
       <widget class="QLabel" name="course">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>-20</x>
          <y>70</y>
-         <width>141</width>
+         <width>201</width>
          <height>31</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 7pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true"/>
        </property>
        <property name="text">
-        <string>Information Technology</string>
+        <string>Appointee Course</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="yearlevel">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>-10</x>
          <y>50</y>
-         <width>71</width>
+         <width>191</width>
          <height>31</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 7pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true"/>
        </property>
        <property name="text">
-        <string>Second Year</string>
+        <string>Appointee Year Level</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="schoolID">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>-20</x>
          <y>90</y>
-         <width>141</width>
+         <width>201</width>
          <height>31</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 7pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true"/>
        </property>
        <property name="text">
-        <string>20190018799</string>
+        <string>Appointee School ID</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="name">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>-20</x>
          <y>30</y>
-         <width>141</width>
+         <width>201</width>
          <height>31</height>
         </rect>
        </property>
        <property name="text">
-        <string>Justin Bieber</string>
+        <string>Appointee</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="person">
@@ -1162,14 +1228,17 @@ background-color: rgba(0,0,0,0%)
      </property>
      <item>
       <property name="text">
-       <string>Selena Gomez</string>
+       <string>New Item</string>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
+     </item>
+     <item>
+      <property name="text">
+       <string>New Item</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>New Item</string>
       </property>
      </item>
     </widget>
@@ -1177,7 +1246,7 @@ background-color: rgba(0,0,0,0%)
      <property name="geometry">
       <rect>
        <x>170</x>
-       <y>40</y>
+       <y>30</y>
        <width>165</width>
        <height>41</height>
       </rect>
@@ -1236,27 +1305,33 @@ border:0px;
      <widget class="QLabel" name="prioritynumber_3">
       <property name="geometry">
        <rect>
-        <x>190</x>
+        <x>140</x>
         <y>70</y>
-        <width>201</width>
+        <width>281</width>
         <height>31</height>
        </rect>
       </property>
       <property name="text">
        <string>&lt;QUEUE NUMBER&gt;</string>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
      </widget>
      <widget class="QLabel" name="professorsname_4">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>140</x>
         <y>30</y>
-        <width>141</width>
+        <width>281</width>
         <height>41</height>
        </rect>
       </property>
       <property name="text">
        <string>Mark Mcphee</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_3">
@@ -1304,7 +1379,7 @@ font:bold 20px;
   <zorder>groupIcons</zorder>
  </widget>
  <resources>
-  <include location="i.qrc"/>
+  <include location="../../qrc/teacher/teacher.qrc"/>
  </resources>
  <connections/>
 </ui>

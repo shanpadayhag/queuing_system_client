@@ -2,7 +2,7 @@ import os
 
 from PyQt5.QtWidgets import QDialog
 from PyQt5.uic import loadUi
-from PyQt5.QtCore import QTime
+from PyQt5.QtCore import QTime, QDate
 
 import view.qrc.student.student
 from model.Database import Database
@@ -30,6 +30,7 @@ class Student(QDialog):
         self.loadCurrentDateTime()
     
     def loadCurrentDateTime(self):
+        self.qt_calendar.setSelectedDate(QDate.currentDate())
         self.timeEdit.setTime(QTime.currentTime())
     
     def getCurrentUser(self):
@@ -47,10 +48,9 @@ class Student(QDialog):
             self.sqlData.append(self.getCurrentUser()[0][0])
             self.sqlData.append(self.currentSelectedTeacher)
             self.sqlData.append(self.plainTextEdit.toPlainText())
-            self.sqlData.append(self.qt_calendar.selectedDate().toString('yyyy-MM-dd'))
-            self.sqlData.append(self.timeEdit.time().toString('hh:mm:ss'))
+            self.sqlData.append(self.qt_calendar.selectedDate().toString('yyyy-MM-dd') + ' ' + self.timeEdit.time().toString('hh:mm:ss'))
 
-            sqlStatement = "INSERT INTO appointment (`student`, `teacher`, `reason`, `date`, time) VALUES (%s, %s, %s, %s, %s)"
+            sqlStatement = "INSERT INTO appointment (`student`, `teacher`, `reason`, `datetime`) VALUES (%s, %s, %s, %s)"
             database = Database()
             try:
                 database.save(sqlStatement, tuple(self.sqlData))
@@ -62,6 +62,10 @@ class Student(QDialog):
 
         except Exception as e:
             print(e)    
+        
+        self.loadCurrentDateTime()
+        self.plainTextEdit.setPlainText('')
+        self.set_3.setText('Faculty')
     
     def selectedItem(self):
         self.set_3.setText(self.list.currentItem().text())
@@ -82,6 +86,7 @@ class Student(QDialog):
             print(e)
         del session
 
+        self.dashboard()
         self.widget.setCurrentIndex(self.applicationPage.LOGIN)
     
     def loadListWidget(self):

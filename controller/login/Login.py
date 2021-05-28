@@ -10,10 +10,12 @@ from model.AccountType import AccountType
 import view.qrc.login.background_design
 
 class Login(QDialog):
-    def __init__(self, widget):
+    def __init__(self, widget, accounts):
         super(Login, self).__init__()
         loadUi(os.path.join(os.getcwd(), "view/ui/login/login.ui"), self)
         self.widget = widget
+        self.teacherAccount = accounts[1]
+        self.studentAccount = accounts[2]
         self.sqlData = []
         self.session = []
         self.applicationPage = ApplicationPage()
@@ -64,9 +66,13 @@ class Login(QDialog):
 
         elif self.session[5] == self.accountType.TEACHER:
             self.widget.setCurrentIndex(self.applicationPage.TEACHER)
+            self.teacherAccount.getCurrentUser()
+            self.teacherAccount.setLatestAppointment()
+            self.teacherAccount.setProfile()
+            self.teacherAccount.loadListWidget()
 
         elif self.session[5] == self.accountType.STUDENT:
-            self.widget.setCurrentIndex(self.applicationPage.ADMIN)
+            self.widget.setCurrentIndex(self.applicationPage.STUDENT)
             
         self.session.clear()
     
