@@ -8,7 +8,7 @@ def createDB():
     )
     csr = conn.cursor()
 
-    sqlStatement = "CREATE SCHEMA `cc15`"
+    sqlStatement = "CREATE SCHEMA IF NOT EXISTS `cc15`"
     csr.execute(sqlStatement)
 
     csr.close()
@@ -24,7 +24,7 @@ def createTables():
     csr = conn.cursor()
 
     sqlStatement = """
-        CREATE TABLE `number` (
+        CREATE TABLE IF NOT EXISTS `number` (
             `cs` int NOT NULL,
             `emc` int NOT NULL,
             `is` int NOT NULL,
@@ -32,13 +32,13 @@ def createTables():
             PRIMARY KEY (`cs`,`emc`,`is`,`it`)
         );
 
-        CREATE TABLE `course` (
+        CREATE TABLE IF NOT EXISTS `course` (
             `id` int NOT NULL AUTO_INCREMENT,
             `name` varchar(255) NOT NULL,
             PRIMARY KEY (`id`)
         );
 
-        CREATE TABLE `enrollment` (
+        CREATE TABLE IF NOT EXISTS `enrollment` (
             `id` int NOT NULL AUTO_INCREMENT,
             `queue` varchar(255) NOT NULL,
             `name` varchar(255) NOT NULL,
@@ -49,13 +49,13 @@ def createTables():
             CONSTRAINT `enrollment_course` FOREIGN KEY (`course`) REFERENCES `course` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
         );
 
-        CREATE TABLE `year_level` (
+        CREATE TABLE IF NOT EXISTS `year_level` (
             `id` int NOT NULL AUTO_INCREMENT,
             `year` varchar(255) DEFAULT NULL,
             PRIMARY KEY (`id`)
         );
 
-        CREATE TABLE `user` (
+        CREATE TABLE IF NOT EXISTS `user` (
             `id` int NOT NULL AUTO_INCREMENT,
             `first_name` varchar(255) NOT NULL,
             `last_name` varchar(255) NOT NULL,
@@ -66,7 +66,7 @@ def createTables():
             KEY `type` (`type`)
         );
 
-        CREATE TABLE `user_student` (
+        CREATE TABLE IF NOT EXISTS `user_student` (
             `id` int NOT NULL,
             `course` int NOT NULL,
             `year` int NOT NULL,
@@ -78,13 +78,13 @@ def createTables():
             CONSTRAINT `student_year` FOREIGN KEY (`year`) REFERENCES `year_level` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
         );
 
-        CREATE TABLE `appointment` (
+        CREATE TABLE IF NOT EXISTS `appointment` (
             `id` int NOT NULL AUTO_INCREMENT,
             `student` int NOT NULL,
             `teacher` int NOT NULL,
             `reason` varchar(255) NOT NULL,
-            `date` date NOT NULL,
-            `time` time NOT NULL,
+            `datetime` datetime NOT NULL,
+            `status` int NOT NULL DEFAULT '0',
             PRIMARY KEY (`id`),
             KEY `appointment_student_idx` (`student`),
             KEY `appointment_teacher_idx` (`teacher`),
@@ -110,6 +110,14 @@ def addData():
     csr = conn.cursor()
 
     sqlStatement = """
+        DELETE FROM `number`;
+        DELETE FROM `course`;
+        DELETE FROM `enrollment`;
+        DELETE FROM `year_level`;
+        DELETE FROM `user`;
+        DELETE FROM `user_student`;
+        DELETE FROM `appointment`;
+
         INSERT INTO `course` (`name`) VALUES ('Computer Science');
         INSERT INTO `course` (`name`) VALUES ('Entertainment and Multimedia Computing');
         INSERT INTO `course` (`name`) VALUES ('Information System');
