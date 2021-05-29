@@ -36,7 +36,7 @@ class Teacher(QDialog):
 
             self.updateStatusAppointment(sqlData, 'accepted')
         except Exception as e:
-            print(e)
+            self.messageBox('Warning', QMessageBox.Critical, 'No appointment is chosen', QMessageBox.Ok)
     
     def declineAppointment(self):
         sqlData = []
@@ -47,7 +47,7 @@ class Teacher(QDialog):
 
             self.updateStatusAppointment(sqlData, 'declined')
         except Exception as e:
-            print(e)
+            self.messageBox('Warning', QMessageBox.Critical, 'No appointment is chosen', QMessageBox.Ok)
     
     def updateStatusAppointment(self, sqlData, status):
         sqlStatement = 'UPDATE appointment SET status = %s WHERE id = %s'
