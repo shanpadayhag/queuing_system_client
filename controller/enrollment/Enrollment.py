@@ -1,7 +1,7 @@
 import os
 from datetime import datetime
 
-from PyQt5.QtWidgets import QDialog
+from PyQt5.QtWidgets import QDialog, QMessageBox
 from PyQt5.uic import loadUi
 
 from model.Database import Database
@@ -56,10 +56,13 @@ class Enrollment(QDialog):
             except Exception as e:
                 print(e)
             del database
+
+            self.messageBox('Reminder', QMessageBox.Information, 'Please remember your queue number', QMessageBox.Ok)
+
             self.sqlData.clear()
             self.openLogin()
         else:
-            print(message)
+            self.messageBox('Warning', QMessageBox.Critical, message, QMessageBox.Ok)
 
     def loadCourses(self):
         sqlStatement = 'SELECT * FROM `course`;'
@@ -124,3 +127,12 @@ class Enrollment(QDialog):
         if self.nameField.text() == '':
             errorString += "- Please enter your name\n"
         return errorString
+
+    def messageBox(self, title, icon, message, button):
+        msg = QMessageBox()
+        msg.setWindowTitle(title)
+        msg.setIcon(icon)
+        msg.setText(message)
+        msg.setStandardButtons(button)
+
+        returnValue = msg.exec()

@@ -1,6 +1,6 @@
 import os
 
-from PyQt5.QtWidgets import QDialog
+from PyQt5.QtWidgets import QDialog, QMessageBox
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.uic import loadUi
 
@@ -56,7 +56,7 @@ class Create(QDialog):
     def signup(self):
         errorString = self.checkFields()
         if errorString:
-            print(errorString)
+            self.messageBox('Warning', QMessageBox.Critical, errorString, QMessageBox.Ok)
         else:
             sqlStatement_user = """
                 INSERT INTO `user` (
@@ -76,10 +76,12 @@ class Create(QDialog):
                 database.save(sqlStatement_user, tuple(self.sqlData_user))
                 database.save(sqlStatement_student, tuple(self.sqlData_student))
 
+                self.messageBox('Congratulations', QMessageBox.Information, 'Account created successfully', QMessageBox.Ok)
+
                 self.openLogin()
             except Exception as e:
                 print(e)
-                print('School ID already exists')
+                self.messageBox('Warning', QMessageBox.Critical, 'School ID already exists', QMessageBox.Ok)
             finally:
                 del database
                 self.sqlData_user.clear()
@@ -119,7 +121,7 @@ class Create(QDialog):
         if self.password_edit.text() != '':
             self.sqlData_user.append(self.password_edit.text()) # Password
         else:
-            errorString += "- School ID can't be blank\n"
+            errorString += "- Password can't be blank\n"
 
         self.sqlData_user.append(self.accountType.STUDENT)
         
@@ -131,7 +133,16 @@ class Create(QDialog):
         if self.year_level.itemData(self.year_level.currentIndex()) != None:
             self.sqlData_student.append(self.year_level.itemData(self.year_level.currentIndex())) # Year Level
         else:
-            errorString += "- Please choose an your year level\n"
+            errorString += "- Please choose your year level\n"
 
         return errorString
+
+    def messageBox(self, title, icon, message, button):
+        msg = QMessageBox()
+        msg.setWindowTitle(title)
+        msg.setIcon(icon)
+        msg.setText(message)
+        msg.setStandardButtons(button)
+
+        returnValue = msg.exec()
         

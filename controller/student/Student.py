@@ -1,6 +1,6 @@
 import os
 
-from PyQt5.QtWidgets import QDialog
+from PyQt5.QtWidgets import QDialog, QMessageBox
 from PyQt5.uic import loadUi
 from PyQt5.QtCore import QTime, QDate
 
@@ -54,18 +54,25 @@ class Student(QDialog):
             database = Database()
             try:
                 database.save(sqlStatement, tuple(self.sqlData))
+                errorValue = True
             except Exception as e:
-                print(self.sqlData)
-                print(e)
+                self.messageBox('Warning', QMessageBox.Critical, 'Teacher is not selected', QMessageBox.Ok)
+                errorValue = False
             del database
+
             self.sqlData.clear()
+            self.currentSelectedTeacher = 0
+
+            if (errorValue):
+                self.messageBox('Successful', QMessageBox.Information, 'Appointment is set successfully', QMessageBox.Ok)
 
         except Exception as e:
             print(e)    
-        
-        self.loadCurrentDateTime()
-        self.plainTextEdit.setPlainText('')
-        self.set_3.setText('Faculty')
+
+        if (errorValue):
+            self.loadCurrentDateTime()
+            self.plainTextEdit.setPlainText('')
+            self.set_3.setText('Faculty')
     
     def selectedItem(self):
         self.set_3.setText(self.list.currentItem().text())
@@ -79,15 +86,18 @@ class Student(QDialog):
     
     def logout(self):
         
-        session = Session()
-        try:
-            currentUser = session.clearCurrentUser()
-        except Exception as e:
-            print(e)
-        del session
+        returnValue = self.messageBox('Warning', QMessageBox.Question, 'Are you sure you want to log out?', (QMessageBox.Yes | QMessageBox.No))
 
-        self.dashboard()
-        self.widget.setCurrentIndex(self.applicationPage.LOGIN)
+        if (returnValue == QMessageBox.Yes):
+            session = Session()
+            try:
+                currentUser = session.clearCurrentUser()
+            except Exception as e:
+                print(e)
+            del session
+
+            self.dashboard()
+            self.widget.setCurrentIndex(self.applicationPage.LOGIN)
     
     def loadListWidget(self):
         self.list.clear()
@@ -99,8 +109,7 @@ class Student(QDialog):
             FROM
                 user
             WHERE
-                type = '1'
-                OR type = '2';
+                type = '2';
         """
 
         database = Database()
@@ -118,3 +127,13 @@ class Student(QDialog):
             self.teacherData[index] = teacher[1]
         
         self.list.addItems(teacherList)
+
+    def messageBox(self, title, icon, message, button):
+        msg = QMessageBox()
+        msg.setWindowTitle(title)
+        msg.setIcon(icon)
+        msg.setText(message)
+        msg.setStandardButtons(button)
+
+        returnValue = msg.exec()
+        return returnValue

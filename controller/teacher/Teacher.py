@@ -1,7 +1,7 @@
 import os
 import datetime
 
-from PyQt5.QtWidgets import QDialog, QTableWidgetItem, QHeaderView
+from PyQt5.QtWidgets import QDialog, QTableWidgetItem, QHeaderView, QMessageBox
 from PyQt5.uic import loadUi
 from PyQt5.QtCore import Qt
 
@@ -34,7 +34,7 @@ class Teacher(QDialog):
             sqlData.append(1)
             sqlData.append(self.appointmentData[self.listWidget.currentRow()][5])
 
-            self.updateStatusAppointment(sqlData)
+            self.updateStatusAppointment(sqlData, 'accepted')
         except Exception as e:
             print(e)
     
@@ -45,11 +45,11 @@ class Teacher(QDialog):
             sqlData.append(2)
             sqlData.append(self.appointmentData[self.listWidget.currentRow()][5])
 
-            self.updateStatusAppointment(sqlData)
+            self.updateStatusAppointment(sqlData, 'declined')
         except Exception as e:
             print(e)
     
-    def updateStatusAppointment(self, sqlData):
+    def updateStatusAppointment(self, sqlData, status):
         sqlStatement = 'UPDATE appointment SET status = %s WHERE id = %s'
 
         database = Database()
@@ -68,6 +68,8 @@ class Teacher(QDialog):
         self.tableWidget.setItem(0, 0, QTableWidgetItem('            '))
         self.tableWidget.setItem(0, 1, QTableWidgetItem('            '))
         self.tableWidget.setItem(0, 2, QTableWidgetItem('            '))
+
+        self.messageBox('Successful', QMessageBox.Information, 'Appointment ' + status + ' successfully', QMessageBox.Ok)
     
     def selectedItem(self):
         self.name.setText(self.listWidget.currentItem().text())
@@ -206,12 +208,26 @@ class Teacher(QDialog):
         self.loadListWidget()
     
     def logout(self):
-        session = Session()
-        try:
-            currentUser = session.clearCurrentUser()
-        except Exception as e:
-            print(e)
-        del session
+        returnValue = self.messageBox('Warning', QMessageBox.Question, 'Are you sure you want to log out?', (QMessageBox.Yes | QMessageBox.No))
 
-        self.dashboard()
-        self.widget.setCurrentIndex(self.applicationPage.LOGIN)
+        if (returnValue == QMessageBox.Yes):
+            session = Session()
+            try:
+                currentUser = session.clearCurrentUser()
+            except Exception as e:
+                print(e)
+            del session
+
+            self.dashboard()
+            self.widget.setCurrentIndex(self.applicationPage.LOGIN)
+
+    def messageBox(self, title, icon, message, button):
+        msg = QMessageBox()
+        msg.setWindowTitle(title)
+        msg.setIcon(icon)
+        msg.setText(message)
+        msg.setStandardButtons(button)
+
+        returnValue = msg.exec()
+
+        return returnValue

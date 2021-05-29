@@ -94,16 +94,17 @@ QPushButton:hover {
 	margin-right: 20px;
 	border-radius: 15px;
 	gridline-color: rgba(47, 56, 67, 150);
-	font-size: bold 20px;
+	font: bold 14px;
 
 }
 
 #list::item {
-	background-color: rgb(90, 24, 136);
+	background-color: rgba(90, 24, 136, 0);
 	color: white;
 	padding-left: 20px;
 	padding-right: 20px;
-font:20px;
+	padding-top: 3px;
+	padding-bottom: 2px;
 }
 
 #queuenumber{
@@ -128,7 +129,7 @@ color:white;
 }</string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="home">
     <widget class="QGroupBox" name="groupie2">
@@ -278,6 +279,9 @@ color:white;
         <height>441</height>
        </rect>
       </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::NoSelection</enum>
+      </property>
       <item>
        <property name="text">
         <string>Justin Bieber</string>
@@ -288,6 +292,51 @@ color:white;
          <weight>75</weight>
          <bold>true</bold>
         </font>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
        </property>
       </item>
      </widget>
@@ -310,7 +359,7 @@ border-radius: 20px;
 font: bold 18px; }</string>
      </property>
      <property name="text">
-      <string>Next Enrollee</string>
+      <string>Current Enrollee</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -358,7 +407,7 @@ font: bold 18px; }</string>
       </rect>
      </property>
      <property name="title">
-      <string>GroupBox</string>
+      <string/>
      </property>
      <widget class="QLabel" name="label_3">
       <property name="geometry">
@@ -459,7 +508,7 @@ color:white;
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../Student_new/img/logout.svg</normaloff>../Student_new/img/logout.svg</iconset>
+      <normaloff>../teacher/img/logout.svg</normaloff>../teacher/img/logout.svg</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -482,7 +531,7 @@ color:white;
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../facultydashboard_new/img/home.svg</normaloff>../facultydashboard_new/img/home.svg</iconset>
+      <normaloff>../../img/admin/home.svg</normaloff>../../img/admin/home.svg</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -496,7 +545,7 @@ color:white;
   </widget>
  </widget>
  <resources>
-  <include location="a.qrc"/>
+  <include location="../../qrc/admin/a.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -1,6 +1,6 @@
 import os
 
-from PyQt5.QtWidgets import QDialog
+from PyQt5.QtWidgets import QDialog, QMessageBox
 from PyQt5.uic import loadUi
 
 from model.Database import Database
@@ -30,11 +30,12 @@ class Login(QDialog):
         self.sqlData.append(self.Password_edit.text())
 
         if (self.checkCredentials()):
+            self.messageBox('Congratulations', QMessageBox.Information, 'Logged in successfully', QMessageBox.Ok)
             self.openAccount()
             self.email_edit.setText('')
             self.Password_edit.setText('')
         else:
-            print("Please recheck credentials")
+            self.messageBox('Warning', QMessageBox.Critical, "Email or Password doesn't match or incorrect", QMessageBox.Ok)
     
     def checkCredentials(self):
         sqlStatement = "SELECT * FROM user WHERE school_id = %s AND password = %s"
@@ -83,3 +84,12 @@ class Login(QDialog):
     def openEnrollmentQueue(self):
         self.widget.setCurrentIndex(self.applicationPage.ENROLLMENT)
         self.widget.resize(1000, 600)
+
+    def messageBox(self, title, icon, message, button):
+        msg = QMessageBox()
+        msg.setWindowTitle(title)
+        msg.setIcon(icon)
+        msg.setText(message)
+        msg.setStandardButtons(button)
+
+        returnValue = msg.exec()
