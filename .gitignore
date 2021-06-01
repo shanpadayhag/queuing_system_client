@@ -1,0 +1,16 @@
+.qt_for_python
+
+# Python Caches
+controller/__pycache__
+controller/login/__pycache__
+controller/create/__pycache__
+controller/admin/__pycache__
+controller/student/__pycache__
+controller/teacher/__pycache__
+controller/enrollment/__pycache__
+model/__pycache__
+view/qrc/login/__pycache__
+view/qrc/signup/__pycache__
+view/qrc/student/__pycache__
+view/qrc/teacher/__pycache__
+view/qrc/admin/__pycache__

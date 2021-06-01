@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>799</width>
+    <height>601</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#returnButton {
+	background-color: transparent;
+}
+
+#appoint_2 {
+QPushButton 
+	color: rgb(255, 255, 255);
+	background-color: rgb(189, 189, 189);
+	border: 0px solid;
+	border-radius : 16px;
+	font: bold 18px;
+}
+
+#appoint_2:hover {	
+	background-color: rgb(88, 23, 132);
+	color: rgb(255, 255, 255);
+}
+
+#queueNumberLabel {
+font: bold 35px;
+}
+#group {
+background-color: rgba(0,0,0,0%);
+border:0px;
+border-radius: 20px;
+}
+QDialog {
+	background-color: rgb(255, 255, 255);
+}
+
+#courseCombobox
+{
+	color: rgb(107, 29, 163);
+
+background-color: rgb(236, 236, 236);
+border: 0px solid;
+border-radius : 10px;
+font: bold 20px;
+padding-left: 40px;
+}
+
+#courseCombobox:hover {
+	
+	background-color:white;
+	
+	color:black;
+}
+
+
+#nameField {
+	color: #000;
+	padding: 10px 10px;
+	
+	background-color: rgb(236, 236, 236);
+	outline: none;
+	border: none;
+	border-radius: 10px;
+	font-size: 15px;
+}
+#title_3 {
+border:0px;
+}
+
+#title {
+font: bold 30px;
+}
+#title_2 {
+font: bold 30px;
+}
+QLabel {
+font: bold 18px;
+	color: rgb(84, 23, 128);
+}
+#boxy {
+border:0px;
+border-radius:20px;
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(87, 0, 155, 43), stop:1 rgba(198, 71, 255, 255));
+}
+
+
+QPushButton {
+	color: rgb(255, 255, 255);
+	
+	background-color: rgb(90, 24, 136);
+	border: 0px solid;
+	border-radius : 16px;
+	font: bold 18px;
+}
+
+QPushButton:hover {	
+	
+	background-color: rgb(189, 189, 189);
+	color: rgb(255, 255, 255);
+}
+#appoint {
+QPushButton 
+	color: rgb(255, 255, 255);
+	
+	background-color: rgb(90, 24, 136);
+	border: 0px solid;
+	border-radius : 2px;
+	font: bold 18px; }
+#appoint:hover {
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:1, stop:0 rgba(161, 3, 212, 76), stop:1 rgba(113, 51, 70, 0));
+	color: rgb(255, 255, 255);
+}</string>
+  </property>
+  <widget class="QPushButton" name="returnButton">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>520</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="text">
+    <string>Return to login</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="title_3">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>0</y>
+     <width>661</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QLabel" name="boxy">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>40</y>
+      <width>571</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>-20</y>
+      <width>251</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>img/undraw_social_dashboard_k3pt.svg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="title">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>50</y>
+      <width>301</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Student Enrollment</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="title_2">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>80</y>
+      <width>111</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Queue</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>180</y>
+     <width>411</width>
+     <height>391</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>img/student2.svg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="group">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>140</y>
+     <width>391</width>
+     <height>441</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Name</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="nameField">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>341</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Complete Name</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>150</y>
+      <width>331</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Course</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="courseCombobox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>180</y>
+      <width>341</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Select a course</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="queueNumberLabel">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>250</y>
+      <width>271</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Select course</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="queueButton">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>340</y>
+      <width>311</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string>Get Priority Number</string>
+    </property>
+   </widget>
+  </widget>
+  <zorder>title_3</zorder>
+  <zorder>returnButton</zorder>
+  <zorder>label</zorder>
+  <zorder>group</zorder>
+ </widget>
+ <resources>
+  <include location="img/e.qrc"/>
+ </resources>
+ <connections/>
+</ui>

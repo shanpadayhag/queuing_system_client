@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>bg222.svg</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>bg.svg</file>
+  </qresource>
+</RCC>
